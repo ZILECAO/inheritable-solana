@@ -87,20 +87,20 @@ class Writer extends Component {
             saved: false,
             wallet: null,
             oracle_1: "7oATF4u22gFYsYKfgFV7AJZRztkNCtxx71ZCGTjZg9Le",
-            oracle_2: "2hvcL316EUKLCdodjifN2rYCY683tTCZkZCKKew9MsRv",
-            oracle_3: "2hvcL316EUKLCdodjifN2rYCY683tTCZkZCKKew9MsRv",
+            oracle_2: "9yupErbB4jFX3q2rgJidkTgAUeriYhLbF1FUDfZifeEn",
+            oracle_3: "6arzYsxkjTuCmvNH9dE8wjeAnv61rei6uGBzFnRVyaDh",
             claim_1: "John Doe, son, with last 4 SSN digits 1234, 1 House in Palm Beach",
             qty_1: 100,
-            wallet_1: "7oATF4u22gFYsYKfgFV7AJZRztkNCtxx71ZCGTjZg9Le",
+            wallet_1: "9yupErbB4jFX3q2rgJidkTgAUeriYhLbF1FUDfZifeEn",
             claim_2: "Jane Doe, daughter, with last 4 SSN digits 5678, Fiat USD",
             qty_2: 200,
-            wallet_2: "2hvcL316EUKLCdodjifN2rYCY683tTCZkZCKKew9MsRv",
+            wallet_2: "6arzYsxkjTuCmvNH9dE8wjeAnv61rei6uGBzFnRVyaDh",
             claim_3: "George Doe, nephew, with last 4 SSN digits 4567, Fiat USD",
             qty_3: 300,
-            wallet_3: "2hvcL316EUKLCdodjifN2rYCY683tTCZkZCKKew9MsRv",
+            wallet_3: "9yupErbB4jFX3q2rgJidkTgAUeriYhLbF1FUDfZifeEn",
             claim_4: "Mary Doe, niece, with last 4 SSN digits 7654, Fiat USD",
             qty_4: 400,
-            wallet_4: "2hvcL316EUKLCdodjifN2rYCY683tTCZkZCKKew9MsRv",
+            wallet_4: "9yupErbB4jFX3q2rgJidkTgAUeriYhLbF1FUDfZifeEn",
         };
 
         if (!useSolana) {
@@ -466,7 +466,7 @@ class Writer extends Component {
                         />
 
 
-                        <div className='border border-white'></div>
+                        {/* <div className='border border-white'></div>
                         <br />
 
                         <h1 className="mx-auto text-center pb-2 text-3xl font-extrabold text-gray-300">
@@ -481,7 +481,7 @@ class Writer extends Component {
                             <Form styling="w-full h-8 pb-1" field={oracle_2} onChangeFunc={(event) => this.setState({ oracle_2: event.target.value })} placeholder={"Address Here"} />
                             <p className='text-l py-2 '>Third Address</p>
                             <Form styling="w-full h-8 " field={oracle_3} onChangeFunc={(event) => this.setState({ oracle_3: event.target.value })} placeholder={"Address Here"} />
-                        </div>
+                        </div> */}
 
 
                         {/* 
@@ -631,14 +631,16 @@ class Writer extends Component {
                         </button>
 
                         {!!rootHash ? <>
+                            <br />
+                            <br />
                             <span className='text-xl text-white font-extrabold'>WILL ENSCRIBED</span>
                             <br />
                             {rootHash}
                         </> : null}
                     </div>
-                </div >
+                </div>
                 <br />
-            </div >
+            </div>
         );
     }
 }
