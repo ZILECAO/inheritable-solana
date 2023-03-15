@@ -440,7 +440,7 @@ class Verify extends Component {
         return (
             <section className="text-gray-300 bg-zinc-900 min-h-screen pb-32">
                 <header className="items-center justify-between pt-12">
-                    <h1 className="mx-auto pl-24 pb-2 text-xl font-extrabold text-gray-300">
+                    <h1 className="mx-auto text-left pb-2 text-5xl font-DMSans font-extrabold text-gray-300 pl-24">
                         Verify a Claim
                     </h1>
                     <div className='border border-white my-4 mx-24'></div>
@@ -455,7 +455,7 @@ class Verify extends Component {
                         <br />
                         <div className='flex justify-between'>
                             <span className="text-zinc-500 font-bold text-2xl text-left">Weavechain public key: </span>
-                            <span className="text-zinc-300 text-lg">{this.state.publicKey}</span>
+                            <span className="text-zinc-300 text-lg ml-2">{this.state.publicKey}</span>
                         </div>
                         <br />
                         <div className='flex justify-between'>
@@ -503,12 +503,12 @@ class Verify extends Component {
                             <br /> */}
 
 
-
+                            <div className='flex flex-col w-3/5'>
                             <button
-                                className="px-5 py-2.5 mr-2 mt-8 text-lg font-medium text-slate-900 bg-white hover:bg-zinc-200 rounded-md shadow"
+                                className="text-left font-DMSans font-bold px-5 py-2.5  mt-8 text-2xl text-slate-100 bg-zinc-700 hover:bg-zinc-600 rounded-md shadow"
                                 type="submit" onClick={() => this.connect()}>
 
-                                Connect Wallet
+                                1. Connect Wallet
                             </button>
                             &nbsp;
                             {/* <button
@@ -519,12 +519,13 @@ class Verify extends Component {
                             </button> */}
                             &nbsp;
                             <button
-                                className="px-5 py-2.5 ml-2 mt-8 text-lg font-medium text-slate-900 bg-white hover:bg-zinc-200 rounded-md shadow"
+                                className="text-left font-DMSans font-bold px-5 py-2.5  text-2xl text-slate-100 bg-zinc-700 hover:bg-zinc-600 rounded-md shadow"
                                 type="submit" onClick={() => this.check()}>
 
-                                Verify Claim
+                                2. Verify Claim
                             </button>
                             &nbsp;
+                            </div>
                             {SHOW_WITHDRAW ? <button
                                 className="px-5 py-2.5 text-sm font-medium text-white bg-yellow-600 hover:bg-yellow-700 rounded-md shadow"
                                 type="submit" onClick={() => this.withdraw()}>
