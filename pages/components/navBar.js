@@ -5,7 +5,7 @@ import Image from "next/image";
 export function NavBar() {
   // Top Navigation Bar Element
   return (
-      <header aria-label="Site Header" className="bg-bb">
+      <header aria-label="Site Header" className="bg-bb sticky top-0 z-50">
         <div className="mx-auto sm:px-12 lg:px-24">
           <div className="flex h-16 items-center justify-between">
             <div className="md:flex md:items-center md:gap-12">
