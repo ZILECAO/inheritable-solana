@@ -14,7 +14,7 @@ Live Website: https://inheritable-nextjs.vercel.app
 
 ### 1. Why did you build your project?
 
-In recent times, the general quality of life around the globe has undoubtly increased. In response to this trend, developed countries like Korea or Japan begin are left with aging populations.
+In recent times, the general quality of life around the globe has undoubtly increased. In response to this trend, developed countries like Korea or Japan begin to develop aging populations.
 
 In tandem, as widespread crypto adoption becomes the norm, it’s always important to plan for the future, especially because there is no current solution that is compelling for what happens when a person dies and there are funds left in their private wallet.
 
