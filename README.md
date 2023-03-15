@@ -14,9 +14,7 @@ Live Website: https://inheritable-nextjs.vercel.app
 
 ### 1. Why did you build your project?
 
-The overall standard of living worldwide has undoubtedly risen in recent times, prompting developed countries like Korea and Japan to experience aging populations. 
-
-At the same time, with the growing acceptance of cryptocurrency, it has become a concern for a future situation where a person may have passed away while still holding large amounts of funds in their private wallet. 
+As our global standard of living continues to rise, developed nations like Korea and Japan are facing the challenge of an aging population. And as cryptocurrencies gain wider acceptance, it's becoming increasingly important to plan for the future, especially in the event of an unexpected passing. Currently, there are no compelling solutions that deal with locked funds in a crypto wallet after the owner's death.
 
 In response to this need, Inheritable was developed to offer a publicly verifiable and quantum-resistant option for inheriting Web3 assets.
 
