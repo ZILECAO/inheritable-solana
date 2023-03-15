@@ -8,7 +8,7 @@ Twitter: https://twitter.com/Inheritable_xyz
 
 Live Website: https://inheritable-nextjs.vercel.app/writer_page
 
-
+---
 
 ### 1. Why did you build your project?
 
