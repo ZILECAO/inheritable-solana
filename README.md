@@ -18,10 +18,11 @@ As our global standard of living continues to rise, developed nations like Korea
 
 In response to this need, Inheritable was developed to offer a publicly verifiable and quantum-resistant option for inheriting Web3 assets.
 
-Our infrastructure method of anchoring Merkle Tree root hashes to Solana provides an exponential return on scalability, with GDPR-compliant privacy to boot.
-* To put all of the data for a Will on-chain would be prohibitively expensive; putting just the Merkle Tree root hash is very feasible however, moreso when it’s done on a L1 like Solana. 
-* Putting the data directly on-chain would also be illegal to boot, as GDPR compliance necessitates an erasure obligation, and you cannot delete from public blockchains.
-* Our quantum-resistant dilithium signatures also are a novel way to guarantee that the will won’t be spoofed even in a future scenario where quantum computing is prevalent.
+Inheritable solves for the following pain points:
+
+* Putting the data directly on-chain would be illegal to boot, as GDPR compliance necessitates an erasure obligation, and you cannot delete from public blockchains. Our infrastructure method of anchoring Merkle Tree root hashes to Solana provides an exponential return on scalability, with maintaining GDPR-compliance.
+* Storing all of the data for a Will on-chain would also be prohibitively expensive; however, putting just the Merkle Tree root hash is very feasible however, moreso when it’s done on a L1 like Solana. 
+* Our quantum-resistant dilithium signatures are a novel way to guarantee that the Will won’t be spoofed even in a future scenario where quantum computing is prevalent.
 * Finally we love that we can use technology like Weavechain to leverage all of this security technology without having to build it from scratch. We believe that the future of Web3 is dependent on leveraging composable tools and frameworks, and hope that other projects see the potential of this approach.
 
 
