@@ -14,9 +14,22 @@ Live Website: https://inheritable-nextjs.vercel.app/writer_page
 
 Although Web3 assets are relatively new, it’s always important to plan for the future, and when looking at options for passing down Web3 assets, we found no compelling solutions. As a result, we built Inheritable to provide a publicly verifiable and quantum resistant solution to Web3 asset inheritance.
 
+Our infrastructure method of anchoring Merkle Tree root hashes to Solana provides an exponential return on scalability, with GDPR-compliant privacy to boot.
+* To put all of the data for a Will on-chain would be prohibitively expensive; putting just the Merkle Tree root hash is very feasible however, moreso when it’s done on a L1 like Solana. 
+* Putting the data directly on-chain would also be illegal to boot, as GDPR compliance necessitates an erasure obligation, and you cannot delete from public blockchains.
+* Our quantum-resistant dilithium signatures also are a novel way to guarantee that the will won’t be spoofed even in a future scenario where quantum computing is prevalent.
+* Finally we love that we can use technology like Weavechain to leverage all of this security technology without having to build it from scratch. We believe that the future of Web3 is dependent on leveraging composable tools and frameworks, and hope that other projects see the potential of this approach.
 
+
+---
 
 ### 2. How was it built?
+
+Frontend Stack: We use react, next.js, and tailwind css to build our interactive UI. We also use Web3.js to connect our Phantom wallet to the app from the browser. 
+
+Backend Stack: Inheritable is built on top of Solana and utilizes the Weavechain API. Our frontend code makes a call to a public Weavechain API Node that is configured with two specific Solana Accounts (one for writing hashes of the wills and one for oracle voting & unlocking of wills). See more documentation about the Weavechain API here: https://docs.weavechain.com/api.html. 
+
+Design: We used various tools like Figma and Canva to initially design our UI and logos. We then implemented these desgins in our final dapp.
 
 
 ### 3. Testing instructions for Judges
