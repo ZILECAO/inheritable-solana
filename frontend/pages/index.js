@@ -85,6 +85,19 @@ export default function Home() {
           </div>
         </div>
 
+        <div className='flex flex-col items-center text-zinc-300 font-DMSans rounded p-4 m-2 mt-24'>
+                              <div className='justify-center flex-nowrap flex items-center'>
+                                  <a className='font-sm pb-2 text-md'>Smart Contracts deployed on</a>
+                                  <Image className='mx-2'
+                                      src="solana.svg"
+                                      alt="image"
+                                      width={40}
+                                      height={40}
+                                  />
+                              </div>
+                              <a target="_blank" href={"https://explorer.solana.com/address/3uCfjcPxnvWyNRSpBQKcDwpBmuAaXraPw8v7SzKicfmq?cluster=testnet"} className="text-xs font-light underline hover:text-indigo-300 hover:ease-in-out hover:transition hover:duration-700">Writing Hashes of the Will</a>
+                              <a target="_blank" href={"https://explorer.solana.com/address/G9nmhaToGZr2ih7X24Zo72w6fYLAEYU9EMjSo5M5D3vf?cluster=testnet"} className="text-xs font-light underline hover:text-indigo-300 hover:ease-in-out hover:transition hover:duration-700">Oracle Signing</a>
+                          </div>
 
       </div>
     </section>

@@ -273,7 +273,10 @@ class Dashboard extends Component {
             />
             <a className='text-center ml-2' >Sign Will</a>
           </div>
+          
         </div>
+
+        
 
 
         {/* <div className='flex items-center justify-left hover:underline hover:text-white hover:cursor-pointer' onClick={() => this.setState({ screen: 1 })}>
@@ -285,7 +288,11 @@ class Dashboard extends Component {
                               <img src={verifySvg} className="w-5 h-5 mr-2" alt="logo" />
                               <p className='text-center'> Verify and release will </p>
                           </div> */}
+
+            
       </div >
+
+      
     )
   }
 
