@@ -11,6 +11,7 @@ import Inheritance_abi from "./Inheritance_abi.json";
 import FiatTokenV1_abi from "./FiatTokenV1_abi.json";
 import SidebarWrapper from './sidebar-wrapper';
 import { Buffer } from "buffer";
+import { root } from 'postcss';
 
 
 const useSolana = true;
@@ -87,21 +88,21 @@ class Writer extends Component {
             credentials: null,
             saved: false,
             wallet: null,
-            oracle_1: "",
-            oracle_2: "",
-            oracle_3: "",
-            claim_1: "",
-            qty_1: null,
-            wallet_1: "",
-            claim_2: "",
-            qty_2: null,
-            wallet_2: "",
-            claim_3: "",
-            qty_3: null,
-            wallet_3: "",
-            claim_4: "",
-            qty_4: null,
-            wallet_4: "",
+            oracle_1: "0x4AC8f386A76fD64B572619019314715Ad1C2de70",
+            oracle_2: "0x72F97C6108378656a99Fcd4eD58d944E91d74a1b",
+            oracle_3: "0xAd55981118506cEFB74086f11C76d1680A5bda3F",
+            claim_1: "John Doe, son, with last 4 SSN digits 1234, 1 House in Palm Beach",
+            qty_1: 100,
+            wallet_1: "0x4AC8f386A76fD64B572619019314715Ad1C2de70",
+            claim_2: "Jane Doe, daughter, with last 4 SSN digits 5678, Fiat USD",
+            qty_2: 200,
+            wallet_2: "0x72F97C6108378656a99Fcd4eD58d944E91d74a1b",
+            claim_3: "George Doe, nephew, with last 4 SSN digits 4567, Fiat USD",
+            qty_3: 300,
+            wallet_3: "0xAd55981118506cEFB74086f11C76d1680A5bda3F",
+            claim_4: "Mary Doe, niece, with last 4 SSN digits 7654, Fiat USD",
+            qty_4: 400,
+            wallet_4: "0x6575be9b0D1C8c9c611078aCd6f0cED2586053ef",
             screen: 1
         };
 
@@ -114,6 +115,12 @@ class Writer extends Component {
     switchView = () => {
         this.setState({
             screen: (this.state.screen + 1) % 4
+        });
+    }
+
+    backView = () => {
+        this.setState({
+            screen: (this.state.screen - 1) % 4
         });
     }
 
@@ -167,15 +174,6 @@ class Writer extends Component {
                             <br />
                             <p className='text-lg font-DMSan font-bold text-left'>Please follow below steps to sign will:</p>
 
-                            {/* <div className="flex justify-between">
-                                <p className="text-zinc-500 font-bold text-left">Connected Address: </p>
-                                <span className="text-zinc-300">{this.state.currentWallet}</span>
-                            </div>
-                            <div className='flex justify-between'>
-                                <span className="text-zinc-500 font-bold text-left">Weavechain public key: </span>
-                                <span className="text-zinc-300">{this.state.publicKey}</span>
-                            </div>
-                            <div className='border border-white my-4'></div> */}
 
                             <div className='flex flex-col w-3/5'>
                                 <button
@@ -190,15 +188,28 @@ class Writer extends Component {
                                 </button>
                             </div>
 
-
-
                             {!!rootHash ? <>
-                                <br />
-                                <br />
-                                <span className='text-xl text-white font-extrabold'>WILL ENSCRIBED</span>
-                                <br />
-                                {rootHash}
+                                <div className='flex justify-center flex-col mt-10'>
+                                    <span className='text-center text-xl text-white font-extrabold'>Your will has been successfully enscribed.</span>
+
+                                    <span className='text-center text-xs'>
+                                        {`Your will hash is: ${rootHash}`}
+                                    </span>
+                                </div>
+
+
                             </> : null}
+                            <div className='flex justify-end'>
+
+                                <div>
+                                    <button
+                                        className="px-5 mx-2 mt-4 text-lg font-medium text-slate-900 bg-white hover:bg-zinc-200 rounded-md shadow"
+                                        type="submit" onClick={() => this.backView()}>
+                                        Back
+                                    </button>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -235,7 +246,7 @@ class Writer extends Component {
                     </div>
                     <div className='w-3/4 bg-black'>
                         <div className="p-8 mx-auto backdrop-sepia-0 text-gray-300 bg-black min-h-screen">
-                            <h1 className="mx-auto text-left pb-2 text-5xl font-DMSerif font-extrabold text-gray-300">
+                            <h1 className="mx-auto pb-2 font-DMSerif font-extrabold text-gray-300 text-5xl">
                                 Set Witnesses of Passing
                             </h1>
 
@@ -255,11 +266,20 @@ class Writer extends Component {
                             </div>
 
                             <div className='flex justify-end'>
-                                <button
-                                    className="px-5 mx-2 mt-4 text-lg font-medium text-slate-900 bg-white hover:bg-zinc-200 rounded-md shadow"
-                                    type="submit" onClick={() => this.switchView()}>
-                                    Next
-                                </button>
+
+                                <div>
+                                    <button
+                                        className="px-5 mx-2 mt-4 text-lg font-medium text-slate-900 bg-white hover:bg-zinc-200 rounded-md shadow"
+                                        type="submit" onClick={() => this.backView()}>
+                                        Back
+                                    </button>
+                                    <button
+                                        className="px-5 mx-2 mt-4 text-lg font-medium text-slate-900 bg-white hover:bg-zinc-200 rounded-md shadow"
+                                        type="submit" onClick={() => this.switchView()}>
+                                        Next
+                                    </button>
+                                </div>
+
                             </div>
 
                         </div>
@@ -329,6 +349,13 @@ class Writer extends Component {
                                     onChange3={(event) => this.setState({ wallet_3: event.target.value })}
                                 />
 
+                                <Claim itemNo={4}
+                                    field1={claim_4} field2={qty_4} field3={wallet_4}
+                                    onChange1={(event) => this.setState({ claim_4: event.target.value })}
+                                    onChange2={(event) => this.setState({ qty_4: event.target.value })}
+                                    onChange3={(event) => this.setState({ wallet_4: event.target.value })}
+                                />
+
                             </div>
 
 
@@ -372,7 +399,7 @@ class Writer extends Component {
                         }
                         <a className={
                             this.state.screen == 1
-                                ? 'text-center ml-2 text-bold'
+                                ? 'text-center ml-2 font-bold'
                                 : 'text-center ml-2'
                         } >Enscribe Will</a>
 
@@ -401,7 +428,7 @@ class Writer extends Component {
                         }
                         <a className={
                             this.state.screen == 2
-                                ? 'text-center ml-2 underline'
+                                ? 'text-center ml-2 font-bold'
                                 : 'text-center ml-2'
                         } >Set Witnesses</a>
                     </div>
