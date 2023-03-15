@@ -31,8 +31,12 @@ Backend Stack: Inheritable is built on top of Solana and utilizes the Weavechain
 
 Design: We used various tools like Figma and Canva to initially design our UI and logos. We then implemented these desgins in our final dapp.
 
+---
 
 ### 3. Testing instructions for Judges
+
+
+---
 
 
 ### 4. Project Demo/Walkthrough
@@ -40,10 +44,15 @@ Design: We used various tools like Figma and Canva to initially design our UI an
 Youtube: https://youtu.be/AS2wmoxLfF4
 
 
+---
+
 ### 5. Team Members: 
 
 Zile Cao, Eric Chen, Paul Loh, Brandon Kong, Intel Chen, Winnie Wang, Aashika Vishwanath, and Nathaniel Luu (all students at the University of Pennsylvania)
 
+---
+
+### 6. Long Description
 
 Inheritable is a Web3 Will solution for secure, decentralized inheritance that’s Anchored on Solana and powered by Weavechain.
 
