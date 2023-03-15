@@ -14,7 +14,9 @@ Live Website: https://inheritable-nextjs.vercel.app
 
 ### 1. Why did you build your project?
 
-Although Web3 assets are relatively new, it’s always important to plan for the future, and when looking at options for passing down Web3 assets, we found no compelling solutions. As a result, we built Inheritable to provide a publicly verifiable and quantum resistant solution to Web3 asset inheritance.
+Although Web3 assets are relatively new, it’s always important to plan for the future, and when looking at options for passing down Web3 assets, we found no compelling solutions. As quality of life around the globe increases, we begin to notice countries with aging populations, such as those in Korea or Japan. As widespread crypto adoption becomes the norm, a big question that arises is "what happens to our wallet funds after we die?" Are they stuck there forever if nobody else has access to our private keys?
+
+As a result, we built Inheritable to provide a publicly verifiable and quantum resistant solution to Web3 asset inheritance.
 
 Our infrastructure method of anchoring Merkle Tree root hashes to Solana provides an exponential return on scalability, with GDPR-compliant privacy to boot.
 * To put all of the data for a Will on-chain would be prohibitively expensive; putting just the Merkle Tree root hash is very feasible however, moreso when it’s done on a L1 like Solana. 
