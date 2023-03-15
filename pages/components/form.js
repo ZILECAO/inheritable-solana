@@ -1,8 +1,6 @@
 const Form = ({ field, onChangeFunc, placeholder, styling }) => {
 
-  field === ""
-    ? styling = "text-left rounded-sm text-black p-1 bg-zinc-800 focus:bg-white " + styling
-    : styling = "text-left rounded-sm text-black p-1 bg-zinc-800 focus:bg-white " + styling
+  styling = "text-left rounded-sm text-zinc-400 p-1 bg-zinc-800 focus:bg-white focus:text-black " + styling;
   return (
     (<textarea className={styling} onChange={onChangeFunc} type="text" value={field} placeholder={placeholder} />)
   )
