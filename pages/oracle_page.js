@@ -62,7 +62,7 @@ class Dashboard extends Component {
     return (
       <div className="font-serif bg-zinc-900 ">
         {/* sidebar */}
-        <div className="fixed w-1/4 h-4/6	 flex flex-col justify-between">
+        {/* <div className="fixed w-1/4 h-4/6	 flex flex-col justify-between">
           <div className='max-h-2/5'>
 
             <this.SidebarOracle />
@@ -108,21 +108,12 @@ class Dashboard extends Component {
             </div>
 
           </div>
-        </div>
+        </div> */}
 
 
         {/* main page section */}
-        <div className="font-inter flex ">
-          <div className='w-1/4 bg-zinc-900 flex flex-col'>
-          </div>
-          <div className='w-3/4 bg-black'>
+
             <Oracle />
-
-          </div>
-        </div>
-
-
-
 
       </div>
     )

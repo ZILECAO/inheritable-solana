@@ -440,22 +440,22 @@ class Verify extends Component {
         return (
             <section className="text-gray-300 bg-zinc-900 min-h-screen pb-32">
                 <header className="items-center justify-between pt-12">
-                    <h1 className="mx-auto pl-12 pb-2 text-5xl font-extrabold text-gray-300">
+                    <h1 className="mx-auto pl-24 pb-2 text-xl font-extrabold text-gray-300">
                         Verify a Claim
                     </h1>
-                    <div className='border border-white my-4 mx-12'></div>
+                    <div className='border border-white my-4 mx-24'></div>
 
                 </header>
                 <div class="text-sm items-center mt-6 px-24 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
                     <div className='col-span-1'>
                         <div className="flex justify-between">
                             <p className="text-zinc-500 font-bold text-2xl text-left">Connected Address: </p>
-                            <span className="text-zinc-300 text-xl">{this.state.currentWallet}</span>
+                            <span className="text-zinc-300 text-lg">{this.state.currentWallet}</span>
                         </div>
                         <br />
                         <div className='flex justify-between'>
                             <span className="text-zinc-500 font-bold text-2xl text-left">Weavechain public key: </span>
-                            <span className="text-zinc-300 text-xl">{this.state.publicKey}</span>
+                            <span className="text-zinc-300 text-lg">{this.state.publicKey}</span>
                         </div>
                         <br />
                         <div className='flex justify-between'>

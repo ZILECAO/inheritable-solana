@@ -282,7 +282,7 @@ class Oracle extends Component {
     render() {
         return <section className="text-gray-300 bg-black min-h-screen pb-32 font-inter">
             <header className="items-center justify-between pt-12">
-                <h1 className="mx-auto text-center pb-2 text-5xl font-extrabold text-gray-300">
+                <h1 className="mx-auto text-center pb-2 text-xl font-extrabold text-gray-300">
                     Oracle View
                 </h1>
             </header>
