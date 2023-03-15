@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-export function NavBar() {
+export default function NavBar() {
   // Top Navigation Bar Element
   return (
     <header aria-label="Site Header" className="bg-bb sticky top-0 z-50">
