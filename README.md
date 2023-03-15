@@ -16,7 +16,7 @@ Live Website: https://inheritable-nextjs.vercel.app
 
 The overall standard of living worldwide has undoubtedly risen in recent times, prompting developed countries like Korea and Japan to experience aging populations. 
 
-Concurrently, with the growing acceptance of cryptocurrency, it is crucial to consider the future and the lack of a viable solution for the situation where a person passes away while still holding funds in their private wallet. 
+At the same time, with the growing acceptance of cryptocurrency, it is crucial to consider the future situation where a person passes away while still holding funds in their private wallet. 
 
 In response to this need, Inheritable was developed to offer a publicly verifiable and quantum-resistant option for inheriting Web3 assets.
 
