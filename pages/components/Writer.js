@@ -88,21 +88,21 @@ class Writer extends Component {
             credentials: null,
             saved: false,
             wallet: null,
-            oracle_1: "0x4AC8f386A76fD64B572619019314715Ad1C2de70",
-            oracle_2: "0x72F97C6108378656a99Fcd4eD58d944E91d74a1b",
-            oracle_3: "0xAd55981118506cEFB74086f11C76d1680A5bda3F",
+            oracle_1: "9yupErbB4jFX3q2rgJidkTgAUeriYhLbF1FUDfZifeEn",
+            oracle_2: "6arzYsxkjTuCmvNH9dE8wjeAnv61rei6uGBzFnRVyaDh",
+            oracle_3: "7oATF4u22gFYsYKfgFV7AJZRztkNCtxx71ZCGTjZg9Le",
             claim_1: "John Doe, son, with last 4 SSN digits 1234, 1 House in Palm Beach",
             qty_1: 100,
-            wallet_1: "0x4AC8f386A76fD64B572619019314715Ad1C2de70",
+            wallet_1: "9yupErbB4jFX3q2rgJidkTgAUeriYhLbF1FUDfZifeEn",
             claim_2: "Jane Doe, daughter, with last 4 SSN digits 5678, Fiat USD",
             qty_2: 200,
-            wallet_2: "0x72F97C6108378656a99Fcd4eD58d944E91d74a1b",
+            wallet_2: "6arzYsxkjTuCmvNH9dE8wjeAnv61rei6uGBzFnRVyaDh",
             claim_3: "George Doe, nephew, with last 4 SSN digits 4567, Fiat USD",
             qty_3: 300,
-            wallet_3: "0xAd55981118506cEFB74086f11C76d1680A5bda3F",
+            wallet_3: "9yupErbB4jFX3q2rgJidkTgAUeriYhLbF1FUDfZifeEn",
             claim_4: "Mary Doe, niece, with last 4 SSN digits 7654, Fiat USD",
             qty_4: 400,
-            wallet_4: "0x6575be9b0D1C8c9c611078aCd6f0cED2586053ef",
+            wallet_4: "9yupErbB4jFX3q2rgJidkTgAUeriYhLbF1FUDfZifeEn",
             screen: 1
         };
 
@@ -319,7 +319,7 @@ class Writer extends Component {
                     </div>
                     <div className='w-3/4 bg-black'>
                         <div className="p-8 mx-auto backdrop-sepia-0 text-gray-300 bg-black min-h-screen">
-                            <h1 className="mx-auto text-left pb-2 text-5xl font-DMSerif font-extrabold text-gray-300">
+                            <h1 className="mx-auto text-left pb-2 text-5xl font-DMSans font-extrabold text-gray-300">
                                 Enscribe Will Components
                             </h1>
 

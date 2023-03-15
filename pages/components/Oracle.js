@@ -282,7 +282,7 @@ class Oracle extends Component {
     render() {
         return <section className="text-gray-300 bg-zinc-900 min-h-screen pb-32 font-inter">
             <header className="items-center justify-between pt-12">
-                <h1 className="mx-auto pl-24 pb-2 text-xl font-extrabold text-gray-300">
+                <h1 className="mx-auto text-left pb-2 text-5xl font-DMSans font-extrabold text-gray-300 pl-24">
                     Witness Voting
                 </h1>
                 <div className='border border-white my-4 mx-24'></div>
@@ -299,15 +299,11 @@ class Oracle extends Component {
                     <div className="text-white font-bold text-lg text-left">
                     Please Follow Steps Below to Sign Will as a Witness
                     </div>
-
-                    <button class="transition border border-white p-6 my-6">
-                        
-                        
-                    </button>
-
-                    <button className="px-5 py-2.5 mt-2 text-lg font-semibold text-slate-900 bg-white hover:bg-zinc-200 rounded-md shadow mx-2" type="submit" onClick={() => this.connect()}>Connect Wallet</button>
+                    <div className='flex flex-col w-3/5'>
+                    <button className="text-left font-DMSans font-bold px-5 py-2.5 mx-2 mt-8 text-2xl text-slate-100 bg-zinc-700 hover:bg-zinc-600 rounded-md shadow" type="submit" onClick={() => this.connect()}>1. Connect Wallet</button>
                         &nbsp;
-                        <button className="px-5 py-2.5 mt-2 text-lg font-semibold text-slate-900 bg-white hover:bg-zinc-200 rounded-md shadow mx-2" type="submit" onClick={() => this.vote()}>Bear witness to death</button>
+                        <button className="text-left font-DMSans font-bold px-5 py-2.5 mx-2 text-2xl text-slate-100 bg-zinc-700 hover:bg-zinc-600 rounded-md shadow" type="submit" onClick={() => this.vote()}>2. Bear witness to death</button>
+                        </div>
                 </div>
                 <div>
                 <label className="mx-auto text-center pb-2 text-lg font-bold text-zinc-500">Witnesses Signed:</label> <span className="mx-auto text-center pb-2 text-lg font-bold text-white"> {this.state.signed} of {this.state.oraclesCount} required</span>

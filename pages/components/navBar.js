@@ -23,11 +23,11 @@ export function NavBar() {
 
           <div className="hidden md:block">
             <nav aria-label="Site Nav">
-              <ul className="flex items-center gap-6 text-sm text-white text-4xl font-serif">
+              <ul className="flex items-center gap-6 text-md text-white font-serif">
 
                 <li>
                   <Link
-                    className="transition hover:text-gray-500/75 italic"
+                    className="transition hover:text-gray-500/75"
                     href="/writer_page"
                   >
                     Estate Write
@@ -54,7 +54,7 @@ export function NavBar() {
 
                 <li>
                   <Link
-                    className="transition hover:text-gray-500/75"
+                    className="transition hover:text-gray-500/75 italic"
                     href="/verify_page"
                   >
                     Verify Claims
