@@ -7,7 +7,7 @@ import Inheritance_abi from "./Inheritance_abi.json";
 import WeaveHash_abi from "./WeaveHash_abi.json";
 
 import CoinbaseWalletSDK from '@coinbase/wallet-sdk'
-import {coinbaseWallet} from "./Writer";
+import { coinbaseWallet } from "./Writer";
 const Buffer = require("buffer").Buffer
 
 const useSolana = true;
@@ -73,7 +73,7 @@ class Oracle extends Component {
             const response = await window.solana.connect();
             return response.publicKey.toString();
         } else {
-            const accounts = await ethereum.request({method: 'eth_requestAccounts'});
+            const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
             return Web3.utils.toChecksumAddress(accounts[0].trim());
         }
     }
@@ -156,16 +156,16 @@ class Oracle extends Component {
             })
         } else {
             const contract = await new window.web3.eth.Contract(Inheritance_abi, CONTRACT_ADDRESS);
-            const oracles = await contract.methods.OraclesCount().call({chainId: CHAIN_ID});
+            const oracles = await contract.methods.OraclesCount().call({ chainId: CHAIN_ID });
             let signed = 0;
             for (let i = 0; i < oracles; i++) {
-                const o = await contract.methods.Oracles(i).call({chainId: CHAIN_ID});
+                const o = await contract.methods.Oracles(i).call({ chainId: CHAIN_ID });
                 if (o.signature.length > 0) {
                     signed++;
                 }
             }
 
-            const unlocked = await contract.methods.Unlocked().call({chainId: CHAIN_ID});
+            const unlocked = await contract.methods.Unlocked().call({ chainId: CHAIN_ID });
             this.setState({
                 oraclesCount: oracles,
                 signed: signed,
@@ -199,7 +199,7 @@ class Oracle extends Component {
             const sigbytes = new TextEncoder().encode(sig);
             function le(val) {
                 const res = new Uint8Array(4);
-                res[0] =  val & 0xFF;
+                res[0] = val & 0xFF;
                 res[1] = (val >> 8) & 0xFF;
                 res[2] = (val >> 16) & 0xFF;
                 res[3] = (val >> 24) & 0xFF;
@@ -280,34 +280,44 @@ class Oracle extends Component {
     }
 
     render() {
-        return <section className="text-gray-300 bg-black min-h-screen pb-32 font-inter">
+        return <section className="text-gray-300 bg-zinc-900 min-h-screen pb-32 font-inter">
             <header className="items-center justify-between pt-12">
-                <h1 className="mx-auto text-center pb-2 text-xl font-extrabold text-gray-300">
-                    Oracle View
+                <h1 className="mx-auto pl-24 pb-2 text-xl font-extrabold text-gray-300">
+                    Witness Voting
                 </h1>
+                <div className='border border-white my-4 mx-24'></div>
+
             </header>
 
-            <div class="text-sm items-center text-center mt-6">
-                <div class="max-w-2xl p-6 mx-auto text-center backdrop-sepia-0 backdrop-blur-sm border shadow-xl border-black">
+            <div class="text-sm items-center mt-6 px-24 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+                <div class="col-span-1">
 
                     <div className="flex justify-between">
-                        <p className="text-zinc-500 font-bold text-left">Connected Address: </p>
-                        <span className="text-zinc-300">{this.state.currentWallet}</span>
+                        <p className="text-zinc-500 font-bold text-xl text-left pb-6">Connected Address: </p>
+                        <span className="text-zinc-300 text-lg">{this.state.currentWallet}</span>
+                    </div>
+                    <div className="text-white font-bold text-lg text-left">
+                    Please Follow Steps Below to Sign Will as a Witness
                     </div>
 
-                    <div class="transition border border-white p-6 my-6">
-                        <label className="mx-auto text-center pb-2 text-xl font-bold text-zinc-500">Witnesses Signed:</label> <span className="mx-auto text-center pb-2 text-xl font-bold text-white"> {this.state.signed} of {this.state.oraclesCount} required</span>
-                        <br />
-                        <br />
-                        <br />
-                        <label className="mx-auto text-center pb-2 text-xl font-bold text-zinc-500">Will Unlocked:</label> <span className="mx-auto text-center pb-2 text-xl font-bold text-white">{this.state.unlocked ? "Yes" : "No"}</span>
-                        <br />
-                        <br />
-                        <br />
-                        <button className="px-5 py-2.5 mt-2 text-lg font-semibold text-slate-900 bg-white hover:bg-zinc-200 rounded-md shadow mx-2" type="submit" onClick={() => this.connect()}>Connect Wallet</button>
+                    <button class="transition border border-white p-6 my-6">
+                        
+                        
+                    </button>
+
+                    <button className="px-5 py-2.5 mt-2 text-lg font-semibold text-slate-900 bg-white hover:bg-zinc-200 rounded-md shadow mx-2" type="submit" onClick={() => this.connect()}>Connect Wallet</button>
                         &nbsp;
                         <button className="px-5 py-2.5 mt-2 text-lg font-semibold text-slate-900 bg-white hover:bg-zinc-200 rounded-md shadow mx-2" type="submit" onClick={() => this.vote()}>Bear witness to death</button>
-                    </div>
+                </div>
+                <div>
+                <label className="mx-auto text-center pb-2 text-lg font-bold text-zinc-500">Witnesses Signed:</label> <span className="mx-auto text-center pb-2 text-lg font-bold text-white"> {this.state.signed} of {this.state.oraclesCount} required</span>
+                        <br />
+                        <br />
+                        <br />
+                        <label className="mx-auto text-center pb-2 text-lg font-bold text-zinc-500">Will Unlocked:</label> <span className="mx-auto text-center pb-2 text-lg font-bold text-white">{this.state.unlocked ? "Yes" : "No"}</span>
+                        <br />
+                        <br />
+                        <br />
                 </div>
             </div>
 
