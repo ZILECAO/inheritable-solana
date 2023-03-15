@@ -660,7 +660,7 @@ class Reader extends Component {
                                 </div>
                             ) : null}
                             <button
-                                className='px-5 py-2.5 text-lg font-medium text-slate-900 bg-zinc-500 hover:bg-zinc-200 rounded-md shadow'
+                                className='text-left font-DMSans font-bold px-5 py-2.5 mx-2 mt-8 text-2xl text-slate-100 bg-zinc-700 hover:bg-zinc-600 rounded-md shadow'
                                 type='submit'
                                 onClick={() => this.connect()}
                             >
@@ -668,7 +668,7 @@ class Reader extends Component {
                             </button>
                             &nbsp;
                             <button
-                                className='px-5 py-2.5 text-lg font-medium text-slate-900 bg-zinc-500 hover:bg-zinc-200 rounded-md shadow'
+                                className='text-left font-DMSans font-bold px-5 py-2.5 mx-2 text-2xl text-slate-100 bg-zinc-700 hover:bg-zinc-600 rounded-md shadow'
                                 type='submit'
                                 onClick={() => this.readClaim()}
                             >

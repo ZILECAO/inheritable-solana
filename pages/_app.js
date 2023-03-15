@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="Inheritable" href="/favicon.ico" />
       </Head>
 
       <NavBar connected={connected} setConnected={setConnected} />
