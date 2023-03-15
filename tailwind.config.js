@@ -13,6 +13,10 @@ module.exports = {
       colors: {
         'bb': '#2D2D2D',
       },
+      fontFamily: {
+        'DMSans': 'DM Sans',
+        'DMSerif': 'DM Serif Display'
+      },
     },
     fontSize: {
       xl: ['24px', '32px'],
