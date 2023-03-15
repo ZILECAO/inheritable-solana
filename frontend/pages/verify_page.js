@@ -1,8 +1,8 @@
 import React, { Component, useEffect } from 'react';
-import Writer from './components/Writer';
-import Reader from './components/Reader';
-import Oracle from './components/Oracle';
-import Verify from './components/Verify';
+import Writer from '../components/Writer';
+import Reader from '../components/Reader';
+import Oracle from '../components/Oracle';
+import Verify from '../components/Verify';
 import logo2 from '../public/logo2.svg';
 import solana from '../public/solana.svg'
 import inherilogo from '../public/inheri-logo.svg';
@@ -10,7 +10,7 @@ import verifySvg from "../public//verify.svg";
 import signSvg from "../public/ri_quill-pen-fill.svg";
 import witnessSvg from "../public/witness.svg";
 
-import { NavBar } from './components/navBar';
+import { NavBar } from '../components/navBar';
 import Image from 'next/image';
 
 
