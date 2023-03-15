@@ -226,7 +226,6 @@ class Dashboard extends Component {
           </div>
           <div className='w-3/4 bg-black'>
             <Writer />
-
           </div>
         </div>
       </div>
@@ -306,7 +305,7 @@ class Dashboard extends Component {
   render() {
     return (
       <div className="font-DMSans">
-        <this.ChooseView />
+        <Writer />
       </div>
     )
   }
