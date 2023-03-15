@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function NavBar() {
+const NavBar = () => {
   // Top Navigation Bar Element
+  const [stage, setStage] = useState(0);
   return (
     <header aria-label="Site Header" className="bg-bb sticky top-0 z-50">
       <div className="mx-auto sm:px-12 lg:px-24">
@@ -70,3 +71,4 @@ export default function NavBar() {
 
   )
 }
+export default NavBar

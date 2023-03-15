@@ -1,6 +1,6 @@
 import '../styles/globals.css';
 import { React, useState } from 'react';
-import { NavBar } from './components/navBar.js';
+import NavBar from './components/navBar.js';
 import Head from 'next/head';
 import '../styles/globals.css';
 
