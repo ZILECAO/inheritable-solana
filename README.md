@@ -39,29 +39,41 @@ Design: We used various tools like Figma and Canva to initially design our UI an
 
 Writing a claim: 
 Unfortunately, at the moment only the Solana wallet address [ 7oATF4u22gFYsYKfgFV7AJZRztkNCtxx71ZCGTjZg9Le ] is able to write and hash Wills to https://explorer.solana.com/address/3uCfjcPxnvWyNRSpBQKcDwpBmuAaXraPw8v7SzKicfmq?cluster=testnet, and this account is the personal testnet account for our backend developer so it is not easy to share publicly here.
+
 The dApp is configured so that visitors of the site cannot write a Will successfully with their personal wallet accounts (If judges would like to test writing please reach out to zilecao@sas.upenn.edu and we can share the Estate testing account private key with you).
+
 Luckily, visitors can run through the other three pages in the flow safely: Oracle View, Check Claim, and Verify Claims
+
 For testing purposes, we have already set up a clean Will that has been hashed onto Solana with the information displayed in the text boxes when you view the Estate Write page
 
 --
 
 Voting on the Decentralized Oracle of Death:
+
 Judges will need to add the following private keys to their Phantom wallet: [3XtpHubkVUZo6L1bvwvWhKySFcLMSfXfSyzEXXZmgkqm1JCuhh55S6oKWrXjGVCYuYfi3ipdb9DJCxpoN3LkrUZG] and [2qpMPEs8zKhiokHaybLLkevdoyfyDd719mVDa9Ygn6ETh94dfnL9xUTXesoQyQbPcn9oPrxNepxvm1GgiwHj9MGo]. These are the dummy accounts we have set up with some test SOL. 
+
 Make sure Phantom wallet is set to the TESTNET through developer settings. DevNet and Mainnet will not work here.
+
 These two accounts will be able to vote on the Decentralized Oracle of Death once you click 1. Connect Wallet and then 2. Bear witness to death 
+
 The tracker on the right-hand side should automatically increment once the wallet has signed the message successfully, and once 2 of 3 witnesses have signed, the Will will be unlocked.
 
 --
 
 Retrieving a claim:
+
 Only once the Will has been unlocked, the two dummy wallet addresses that you have imported from above will be able to go here and view the information of a claim that has been bequeathed to them by 1. Connecting wallet and 2. Click to Retrieve Claim
 
 --
 
 Verifying a claim: 
+
 Any Solana wallet account can come in to verify whether a claim is true or false. The reason we implemented this feature is to prevent the case where a Lawyer might come in and claim an inaccurate inheritance for their dishonest benefactor. 
+
 For best testing results, go back to the Estate Write view and copy any one of the item descriptions word-for-word that is pre-written in the text field along with the Amount to the beneficiary number. 
+
 Paste these into their respective verify claim fields and then 1. Connect wallet and 2. Verify Claim. Our dApp should now return a Merkle Tree visual which will show whether the string of text that you have inputted appears in the original Will or not. Here, it should return successfully.  
+
 Try to change even one letter in the description field and run the 2. Verify Claim button again. You will notice that now the Merkle Tree will not contain the faulty value and will return an error. 
 
 
