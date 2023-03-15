@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 
 export function NavBar() {
   // Top Navigation Bar Element
@@ -10,22 +12,38 @@ export function NavBar() {
         <div className="flex items-center justify-between h-16">
           <div className="flex-1 md:flex md:items-center md:gap-12">
 
-            <img
-              src="logo_title.svg"
+          <Link href="/">
+            <Image 
+              src="inheri-logo.svg"
               alt="logo"
               width={150}
               height={150}
             />
+          </Link>
 
           </div>
 
-         <div className="flex text-sm items-center gap-6 justify-start pl-4">
-          <div href="">
+          <div className="flex text-sm items-center gap-6 justify-start pl-4">
+            <Link href="writer_page">
               <p className="text-white transition hover:text-white/75">
-                Dashboard
+                Writer
               </p>
-          </div>
-
+            </Link>
+            <Link href="oracle_page">
+              <p className="text-white transition hover:text-white/75">
+                Oracle
+              </p>
+            </Link>
+            <Link href="reader_page">
+              <p className="text-white transition hover:text-white/75">
+                Reader
+              </p>
+            </Link>
+            <Link href="verify_page">
+              <p className="text-white transition hover:text-white/75">
+                Verify Claims
+              </p>
+            </Link>
           </div>
 
 

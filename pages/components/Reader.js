@@ -440,7 +440,7 @@ class Reader extends Component {
             <section className="text-gray-300 bg-black min-h-screen pb-32">
                 <header className="items-center justify-between pt-12">
                     <h1 className="mx-auto text-center pb-2 text-5xl font-extrabold text-gray-300">
-                        Check or Verify Claim
+                        Check Claim
                     </h1>
                 </header>
                 <div class="text-sm items-center text-center mt-6">
@@ -455,19 +455,19 @@ class Reader extends Component {
                         </div>
                         <br />
                         <div className='flex justify-left'>
-                            <a className='text-zinc-500' href={"https://goerli.basescan.org/address/0xB46459Cf87f1D6dDcf8AABDd5642cf27a39CeC68"} target={"_blank"}>Smart Contract [{HASH_CONTRACT_ADDRESS}]</a>
+                            <a className='text-zinc-500' href={"https://explorer.solana.com/address/3uCfjcPxnvWyNRSpBQKcDwpBmuAaXraPw8v7SzKicfmq?cluster=testnet"} target={"_blank"}>Smart Contract [{HASH_CONTRACT_ADDRESS}]</a>
                         </div>
 
                         <div className='border border-white my-4'></div>
                         <br />
 
                         <p class="transition ">
-                            <div className='rounded-md bg-black text-gray px-8 pt-4 flex flex-col items-start m-3'>
+                            {/* <div className='rounded-md bg-black text-gray px-8 pt-4 flex flex-col items-start m-3'>
                                 <p className='text-l py-2 font-semibold'>Input Claim Description</p>
                                 <Form styling="w-full h-8" field={claim} onChangeFunc={(event) => this.setState({ claim: event.target.value })} placeholder={"description"} />
                                 <p className='text-l py-2 font-semibold'>Amount to Beneficiary</p>
                                 <Form styling="w-1/5 h-8 pb-1" field={qty} onChangeFunc={(event) => this.setState({ qty: event.target.value })} placeholder={"in USDC"} />
-                            </div>
+                            </div> */}
 
                             {/* <input className='border shadow-xl border-blue-500/10 text-center' style={{ width: "600px" }}
                                 type="text"
@@ -546,12 +546,12 @@ class Reader extends Component {
                                 Retrieve Your Claim
                             </button>
                             &nbsp;
-                            <button
+                            {/* <button
                                 className="px-5 py-2.5 mx-2 mt-8 text-lg font-medium text-slate-900 bg-white hover:bg-zinc-200 rounded-md shadow"
                                 type="submit" onClick={() => this.check()}>
 
                                 Verify Claim
-                            </button>
+                            </button> */}
                             &nbsp;
                             {SHOW_WITHDRAW ? <button
                                 className="px-5 py-2.5 text-sm font-medium text-white bg-yellow-600 hover:bg-yellow-700 rounded-md shadow"
@@ -564,7 +564,7 @@ class Reader extends Component {
                 </div>
 
 
-            </section >
+            </section>
         )
     }
 }

@@ -26,7 +26,7 @@ export default function Home() {
         </h2>
 
         <a
-          href="/dashboard"
+          href="/writer_page"
           className="mt-8 inline-flex items-center rounded border bg-orange-700 px-8 py-3 text-white hover:bg-orange-600 focus:outline-none focus:ring active:text-indigo-500"
         >
           <span className="text-sm font-medium"> Get Started </span>
