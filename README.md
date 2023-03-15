@@ -52,6 +52,8 @@ Youtube: https://youtu.be/AS2wmoxLfF4
 
 Zile Cao, Eric Chen, Paul Loh, Brandon Kong, Intel Chen, Winnie Wang, Aashika Vishwanath, and Nathaniel Luu (all students at the University of Pennsylvania)
 
+![Team Pic](https://gateway.pinata.cloud/ipfs/QmRiZZJZWnDD9sWmPfMcPMPxSsx5D4JfFHP2ciTW11SF1y?_gl=1*1rd1zuu*_ga*Y2YyOTEzZDYtZDk3YS00MjQ1LTlmNTgtNDFjMDE0YjQxY2U4*_ga_5RMPXG14TE*MTY3ODg2ODM2NC43LjEuMTY3ODg2ODc5Mi41Ny4wLjA.)
+
 ---
 
 ### 6. Long Description
