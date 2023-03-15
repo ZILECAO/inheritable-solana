@@ -47,7 +47,11 @@ Youtube: https://youtu.be/AS2wmoxLfF4
 
 ---
 
-### 5. Team Members: 
+### Future Outlook: 
+
+---
+
+### 6. Team Members: 
 
 Zile Cao, Eric Chen, Paul Loh, Brandon Kong, Intel Chen, Winnie Wang, Aashika Vishwanath, and Nathaniel Luu (all students at the University of Pennsylvania)
 
@@ -55,7 +59,7 @@ Zile Cao, Eric Chen, Paul Loh, Brandon Kong, Intel Chen, Winnie Wang, Aashika Vi
 
 ---
 
-### 6. Long Description
+### 7. Long Description
 
 Inheritable is a Web3 Will solution for secure, decentralized inheritance that’s Anchored on Solana and powered by Weavechain.
 
