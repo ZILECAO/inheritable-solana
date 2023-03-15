@@ -1,12 +1,16 @@
-## Quickstart
+## Hackathon Supplementals
 
-```
-npm install
-npm run dev
-```
-Note: use node version 19
+### Extra Links
 
-## Description
+Slide Deck: https://docs.google.com/presentation/d/1y7aFhTgXRT0kUugmepj17SMQB-stcUpSZg4qx7Pntqg/edit#slide=id.g21c90c5dd05_8_188
+
+Twitter: https://twitter.com/Inheritable_xyz
+
+Live Website: https://inheritable-nextjs.vercel.app/writer_page
+
+
+
+### Q&A
 
 Inheritable is a Web3 Will solution for secure, decentralized inheritance that’s Anchored on Solana and powered by Weavechain.
 
@@ -26,3 +30,13 @@ Here’s a detailed breakdown,
 
 
 These security features aren’t just jargon; they are essential building blocks that enable privacy-preserving verifiability. Inheritable brings these tools together to create a secure, decentralized, and trustworthy inheritance system.
+
+
+## Localhost Quickstart
+
+```
+npm install
+cd frontend
+npm run dev
+```
+Note: use node version 19
