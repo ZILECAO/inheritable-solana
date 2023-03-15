@@ -43,7 +43,7 @@ Design: We used various tools like Figma and Canva to initially design our UI an
 
 ### 4. Project Demo/Walkthrough
 
-Youtube: https://youtu.be/AS2wmoxLfF4
+![Youtube](https://youtu.be/AS2wmoxLfF4) 
 
 
 ---
