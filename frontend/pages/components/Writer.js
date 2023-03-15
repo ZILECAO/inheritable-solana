@@ -1,17 +1,13 @@
 import React, { Component, useEffect } from 'react';
 import Web3 from 'web3'
-import CoinbaseWalletSDK from '@coinbase/wallet-sdk'
 import WeaveHelper from "./weaveapi/helper";
 import Claim from './claim';
 import Form from './form';
-import { base58_to_binary, binary_to_base58 } from "base58-js";
 import Image from 'next/image';
 
 import Inheritance_abi from "./Inheritance_abi.json";
 import FiatTokenV1_abi from "./FiatTokenV1_abi.json";
-import SidebarWrapper from './sidebar-wrapper';
-import { Buffer } from "buffer";
-import { root } from 'postcss';
+
 
 
 const useSolana = true;
@@ -35,7 +31,7 @@ const CONTRACT_STORAGE_ADDRESS = useSolana ? "J12GJcqn3WneSUS1FMqHNAoeRMWExuRpKL
 const CHAIN_ID = "0x14A33"; //base testnet
 const CHAIN_URL = "https://goerli.base.org";
 
-const ethereum = useSolana ? null : coinbaseWallet.makeWeb3Provider(CHAIN_URL, CHAIN_ID);
+const ethereum = useSolana ? null : null;
 
 const TOKEN_ADDRESS = "0xf26490E8bdFfa5EBE8625Bafa967560303D802E4";
 

@@ -9,7 +9,6 @@ import mermaid from "mermaid";
 import Form from './form';
 import Link from 'next/link';
 
-import CoinbaseWalletSDK from '@coinbase/wallet-sdk'
 import { coinbaseWallet } from "./Writer";
 
 const Buffer = require("buffer").Buffer
@@ -56,7 +55,7 @@ const CHAIN = {
 
 const CHAIN_URL = "https://goerli.base.org";
 
-const ethereum = useSolana ? null : coinbaseWallet.makeWeb3Provider(CHAIN_URL, CHAIN_ID);
+const ethereum = useSolana ? null : null;
 
 
 class Verify extends Component {

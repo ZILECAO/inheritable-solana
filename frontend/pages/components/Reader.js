@@ -6,9 +6,7 @@ import { binary_to_base58, base58_to_binary } from 'base58-js';
 import WeaveHash_abi from './WeaveHash_abi.json';
 import Inheritance_abi from './Inheritance_abi.json';
 import mermaid from 'mermaid';
-import Form from './form';
 
-import CoinbaseWalletSDK from '@coinbase/wallet-sdk';
 import { coinbaseWallet } from './Writer';
 
 const Buffer = require('buffer').Buffer;
@@ -60,7 +58,7 @@ const CHAIN_URL = 'https://goerli.base.org';
 
 const ethereum = useSolana
     ? null
-    : coinbaseWallet.makeWeb3Provider(CHAIN_URL, CHAIN_ID);
+    : null;
 
 class Reader extends Component {
     constructor(props) {
