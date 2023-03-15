@@ -5,50 +5,68 @@ import Image from "next/image";
 export function NavBar() {
   // Top Navigation Bar Element
   return (
+      <header aria-label="Site Header" className="bg-bb">
+        <div className="mx-auto sm:px-12 lg:px-24">
+          <div className="flex h-16 items-center justify-between">
+            <div className="md:flex md:items-center md:gap-12">
+                <span className="sr-only">Home</span>
+                  <Link href="/">
+                    <Image
+                        src="/newlogo.svg"
+                        alt="logo"
+                        width={150}
+                        height={150}
+                    />
+                  </Link>
+            </div>
 
-    <header className="bg-gray-700 sticky top-0 z-50">
-      <div className="px-6 mx-auto max-w-screen-xl sm:px-6 lg:px-8 items-center">
+            <div className="hidden md:block">
+              <nav aria-label="Site Nav">
+                <ul className="flex items-center gap-6 text-sm text-white text-4xl font-serif">
 
-        <div className="flex items-center justify-between h-16">
-          <div className="flex-1 md:flex md:items-center md:gap-12">
+                  <li>
+                    <Link
+                        className="transition hover:text-gray-500/75 italic"
+                        href="/writer_page"
+                    >
+                      Estate Write
+                    </Link>
+                  </li>
 
-          <Link href="/">
-            <Image 
-              src="inheri-logo.svg"
-              alt="logo"
-              width={150}
-              height={150}
-            />
-          </Link>
+                  <li>
+                    <Link
+                        className="transition hover:text-gray-500/75"
+                        href="/oracle_page"
+                    >
+                      Oracle Vote
+                    </Link>
+                  </li>
+
+                  <li>
+                    <Link
+                        className="transition hover:text-gray-500/75"
+                        href="/reader_page"
+                    >
+                      Check Claim
+                    </Link>
+                  </li>
+
+                  <li>
+                    <Link
+                        className="transition hover:text-gray-500/75"
+                        href="/verify_page"
+                    >
+                      Verify Claims
+                    </Link>
+                  </li>
+                </ul>
+              </nav>
+            </div>
 
           </div>
-
-          <div className="flex text-sm items-center gap-6 justify-start pl-4">
-            <Link href="writer_page">
-              <p className="text-white transition hover:text-white/75">
-                Writer
-              </p>
-            </Link>
-            <Link href="oracle_page">
-              <p className="text-white transition hover:text-white/75">
-                Oracle
-              </p>
-            </Link>
-            <Link href="reader_page">
-              <p className="text-white transition hover:text-white/75">
-                Reader
-              </p>
-            </Link>
-            <Link href="verify_page">
-              <p className="text-white transition hover:text-white/75">
-                Verify Claims
-              </p>
-            </Link>
-          </div>
-
-
         </div>
-      </div>
-    </header>
+      </header>
+
+
   )
 }
