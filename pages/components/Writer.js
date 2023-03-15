@@ -5,11 +5,12 @@ import WeaveHelper from "./weaveapi/helper";
 import Claim from './claim';
 import Form from './form';
 import { base58_to_binary, binary_to_base58 } from "base58-js";
+import Image from 'next/image';
 
 import Inheritance_abi from "./Inheritance_abi.json";
 import FiatTokenV1_abi from "./FiatTokenV1_abi.json";
 import SidebarWrapper from './sidebar-wrapper';
-import {Buffer} from "buffer";
+import { Buffer } from "buffer";
 
 
 const useSolana = true;
@@ -86,26 +87,367 @@ class Writer extends Component {
             credentials: null,
             saved: false,
             wallet: null,
-            oracle_1: "7oATF4u22gFYsYKfgFV7AJZRztkNCtxx71ZCGTjZg9Le",
-            oracle_2: "9yupErbB4jFX3q2rgJidkTgAUeriYhLbF1FUDfZifeEn",
-            oracle_3: "6arzYsxkjTuCmvNH9dE8wjeAnv61rei6uGBzFnRVyaDh",
-            claim_1: "John Doe, son, with last 4 SSN digits 1234, 1 House in Palm Beach",
-            qty_1: 100,
-            wallet_1: "9yupErbB4jFX3q2rgJidkTgAUeriYhLbF1FUDfZifeEn",
-            claim_2: "Jane Doe, daughter, with last 4 SSN digits 5678, Fiat USD",
-            qty_2: 200,
-            wallet_2: "6arzYsxkjTuCmvNH9dE8wjeAnv61rei6uGBzFnRVyaDh",
-            claim_3: "George Doe, nephew, with last 4 SSN digits 4567, Fiat USD",
-            qty_3: 300,
-            wallet_3: "9yupErbB4jFX3q2rgJidkTgAUeriYhLbF1FUDfZifeEn",
-            claim_4: "Mary Doe, niece, with last 4 SSN digits 7654, Fiat USD",
-            qty_4: 400,
-            wallet_4: "9yupErbB4jFX3q2rgJidkTgAUeriYhLbF1FUDfZifeEn",
+            oracle_1: "",
+            oracle_2: "",
+            oracle_3: "",
+            claim_1: "",
+            qty_1: null,
+            wallet_1: "",
+            claim_2: "",
+            qty_2: null,
+            wallet_2: "",
+            claim_3: "",
+            qty_3: null,
+            wallet_3: "",
+            claim_4: "",
+            qty_4: null,
+            wallet_4: "",
+            screen: 1
         };
 
         if (!useSolana) {
             this.loadWeb3().then(async () => {
             });
+        }
+    }
+
+    switchView = () => {
+        this.setState({
+            screen: (this.state.screen + 1) % 4
+        });
+    }
+
+    Landing = () => {
+        const {
+            rootHash,
+            oracle_1, oracle_2, oracle_3,
+            claim_1, qty_1, wallet_1,
+            claim_2, qty_2, wallet_2,
+            claim_3, qty_3, wallet_3,
+            claim_4, qty_4, wallet_4,
+        } = this.state;
+        return (
+            <>HELLO!</>
+        )
+    }
+
+    SignComp = () => {
+        const {
+            rootHash,
+            oracle_1, oracle_2, oracle_3,
+            claim_1, qty_1, wallet_1,
+            claim_2, qty_2, wallet_2,
+            claim_3, qty_3, wallet_3,
+            claim_4, qty_4, wallet_4,
+        } = this.state;
+        return (
+            <div className="bg-zinc-900 ">
+                {/* sidebar */}
+                <div className="fixed w-1/4 flex flex-col justify-between">
+                    <div className='max-h-2/5'>
+
+                        <this.SidebarWriter />
+
+                    </div>
+
+                </div>
+
+
+                {/* main page section */}
+                <div className="font-inter flex">
+                    <div className='w-1/4 bg-zinc-900 flex flex-col'>
+                    </div>
+                    <div className='w-3/4 bg-black'>
+                        <div className="p-8 mx-auto backdrop-sepia-0 text-gray-300 bg-black min-h-screen">
+                            <h1 className="mx-auto text-left pb-2 text-5xl font-DMSerif font-extrabold text-gray-300">
+                                Sign Will
+                            </h1>
+
+                            <div className='border border-white mt-1'></div>
+                            <br />
+                            <p className='text-lg font-DMSan font-bold text-left'>Please follow below steps to sign will:</p>
+
+                            {/* <div className="flex justify-between">
+                                <p className="text-zinc-500 font-bold text-left">Connected Address: </p>
+                                <span className="text-zinc-300">{this.state.currentWallet}</span>
+                            </div>
+                            <div className='flex justify-between'>
+                                <span className="text-zinc-500 font-bold text-left">Weavechain public key: </span>
+                                <span className="text-zinc-300">{this.state.publicKey}</span>
+                            </div>
+                            <div className='border border-white my-4'></div> */}
+
+                            <div className='flex flex-col w-3/5'>
+                                <button
+                                    className="text-left font-DMSans font-bold px-5 py-2.5 mx-2 mt-8 text-2xl text-slate-100 bg-zinc-700 hover:bg-zinc-600 rounded-md shadow"
+                                    type="submit" onClick={() => this.connect()}>
+                                    1. Connect Wallet
+                                </button>
+                                <button
+                                    className="text-left font-DMSans font-bold px-5 py-2.5 mx-2 mt-4 text-2xl text-slate-100 bg-zinc-700 hover:bg-zinc-600 rounded-md shadow"
+                                    type="submit" onClick={() => this.write()}>
+                                    2. Sign Will
+                                </button>
+                            </div>
+
+
+
+                            {!!rootHash ? <>
+                                <br />
+                                <br />
+                                <span className='text-xl text-white font-extrabold'>WILL ENSCRIBED</span>
+                                <br />
+                                {rootHash}
+                            </> : null}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        )
+    }
+
+    Witnesses = () => {
+        const {
+            rootHash,
+            oracle_1, oracle_2, oracle_3,
+            claim_1, qty_1, wallet_1,
+            claim_2, qty_2, wallet_2,
+            claim_3, qty_3, wallet_3,
+            claim_4, qty_4, wallet_4,
+        } = this.state;
+        return (
+            <div className="bg-zinc-900 h-full">
+                {/* sidebar */}
+                <div className="fixed w-1/4 flex flex-col justify-between">
+                    <div className='max-h-2/5'>
+
+                        <this.SidebarWriter />
+
+                    </div>
+
+                </div>
+
+
+                {/* main page section */}
+                <div className="font-inter flex">
+                    <div className='w-1/4 bg-zinc-900 flex flex-col'>
+                    </div>
+                    <div className='w-3/4 bg-black'>
+                        <div className="p-8 mx-auto backdrop-sepia-0 text-gray-300 bg-black min-h-screen">
+                            <h1 className="mx-auto text-left pb-2 text-5xl font-DMSerif font-extrabold text-gray-300">
+                                Set Witnesses of Passing
+                            </h1>
+
+                            <div className='border border-white mt-2'></div>
+                            <br />
+
+                            <p className='text-lg font-DMSan font-bold text-left'>{`Please Input Witness Addresses`}</p>
+
+                            <div className='rounded-md bg-black text-gray py-4 flex flex-col items-start m-3 w-3/5'>
+
+                                <p className='text-l py-2 '>First Witness</p>
+                                <Form styling="w-full h-8" field={oracle_1} onChangeFunc={(event) => this.setState({ oracle_1: event.target.value })} placeholder={""} />
+                                <p className='text-l py-2 '>Second Witness</p>
+                                <Form styling="w-full h-8 pb-1" field={oracle_2} onChangeFunc={(event) => this.setState({ oracle_2: event.target.value })} placeholder={""} />
+                                <p className='text-l py-2 '>Third Witness</p>
+                                <Form styling="w-full h-8 " field={oracle_3} onChangeFunc={(event) => this.setState({ oracle_3: event.target.value })} placeholder={""} />
+                            </div>
+
+                            <div className='flex justify-end'>
+                                <button
+                                    className="px-5 mx-2 mt-4 text-lg font-medium text-slate-900 bg-white hover:bg-zinc-200 rounded-md shadow"
+                                    type="submit" onClick={() => this.switchView()}>
+                                    Next
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
+
+    WillComps = () => {
+        const {
+            rootHash,
+            oracle_1, oracle_2, oracle_3,
+            claim_1, qty_1, wallet_1,
+            claim_2, qty_2, wallet_2,
+            claim_3, qty_3, wallet_3,
+            claim_4, qty_4, wallet_4,
+        } = this.state;
+
+        return (
+            <div className="bg-zinc-900 ">
+                {/* sidebar */}
+                <div className="fixed w-1/4 flex flex-col justify-between">
+                    <div className='max-h-2/5'>
+
+                        <this.SidebarWriter />
+
+                    </div>
+
+                </div>
+
+
+                {/* main page section */}
+                <div className="font-inter flex">
+                    <div className='w-1/4 bg-zinc-900 flex flex-col'>
+                    </div>
+                    <div className='w-3/4 bg-black'>
+                        <div className="p-8 mx-auto backdrop-sepia-0 text-gray-300 bg-black min-h-screen">
+                            <h1 className="mx-auto text-left pb-2 text-5xl font-DMSerif font-extrabold text-gray-300">
+                                Enscribe Will Components
+                            </h1>
+
+                            <div className='border border-white mt-2'></div>
+                            <br />
+
+                            <div className='flex flex-wrap justify-between '>
+
+                                <Claim itemNo={1}
+                                    field1={claim_1} field2={qty_1} field3={wallet_1}
+                                    onChange1={(event) => this.setState({ claim_1: event.target.value })}
+                                    onChange2={(event) => this.setState({ qty_1: event.target.value })}
+                                    onChange3={(event) => this.setState({ wallet_1: event.target.value })}
+                                />
+
+                                <Claim itemNo={2}
+                                    field1={claim_2} field2={qty_2} field3={wallet_2}
+                                    onChange1={(event) => this.setState({ claim_2: event.target.value })}
+                                    onChange2={(event) => this.setState({ qty_2: event.target.value })}
+                                    onChange3={(event) => this.setState({ wallet_2: event.target.value })}
+                                />
+
+                                <Claim itemNo={3}
+                                    field1={claim_3} field2={qty_3} field3={wallet_3}
+                                    onChange1={(event) => this.setState({ claim_3: event.target.value })}
+                                    onChange2={(event) => this.setState({ qty_3: event.target.value })}
+                                    onChange3={(event) => this.setState({ wallet_3: event.target.value })}
+                                />
+
+                            </div>
+
+
+
+                            <div className='flex justify-end'>
+                                <button
+                                    className="px-5 mx-2 mt-4 text-lg font-medium text-slate-900 bg-white hover:bg-zinc-200 rounded-md shadow"
+                                    type="submit" onClick={() => this.switchView()}>
+                                    Next
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        )
+    }
+
+    SidebarWriter = () => {
+        return (
+            <div className='text-DMSerif text-white h-2/5 mt-10 text-md pl-8 flex flex-col justify-around' >
+                <div className='mb-6 mt-24'>
+                    <div className='flex items-center justify-left'>
+                        {
+                            this.state.screen == 1
+                                ? <Image
+                                    src="selected.svg"
+                                    alt="image"
+                                    width={25}
+                                    height={25}
+                                />
+                                : <Image
+                                    src="ri_quill-pen-fill.svg"
+                                    alt="image"
+                                    width={25}
+                                    height={25}
+                                />
+                        }
+                        <a className={
+                            this.state.screen == 1
+                                ? 'text-center ml-2 text-bold'
+                                : 'text-center ml-2'
+                        } >Enscribe Will</a>
+
+
+                    </div>
+                </div>
+
+
+
+                <div className='my-6'>
+                    <div className='flex items-center justify-left'>
+                        {
+                            this.state.screen == 2
+                                ? <Image
+                                    src="selected.svg"
+                                    alt="image"
+                                    width={25}
+                                    height={25}
+                                />
+                                : <Image
+                                    src="ri_quill-pen-fill.svg"
+                                    alt="image"
+                                    width={25}
+                                    height={25}
+                                />
+                        }
+                        <a className={
+                            this.state.screen == 2
+                                ? 'text-center ml-2 underline'
+                                : 'text-center ml-2'
+                        } >Set Witnesses</a>
+                    </div>
+                </div>
+
+                <div className='my-6'>
+                    <div className='font-DMSerif flex items-center justify-left'>
+                        {
+                            this.state.screen == 3
+                                ? <Image
+                                    src="selected.svg"
+                                    alt="image"
+                                    width={25}
+                                    height={25}
+                                />
+                                : <Image
+                                    src="ri_quill-pen-fill.svg"
+                                    alt="image"
+                                    width={25}
+                                    height={25}
+                                />
+                        }
+
+                        <a className={
+                            this.state.screen == 3
+                                ? 'text-center ml-2 font-bold'
+                                : 'text-center ml-2'
+                        } >Sign Will</a>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
+    ChooseView = () => {
+        switch (this.state.screen) {
+            case 0:
+                return (
+                    <this.Landing />
+                )
+            case 1:
+                return <this.WillComps />
+            case 2:
+                return <this.Witnesses />
+            case 3:
+                return <this.SignComp />
         }
     }
 
@@ -121,7 +463,7 @@ class Writer extends Component {
             const response = await window.solana.connect();
             return response.publicKey.toString();
         } else {
-            const accounts = await ethereum.request({method: 'eth_requestAccounts'});
+            const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
             return Web3.utils.toChecksumAddress(accounts[0].trim());
         }
     }
@@ -212,7 +554,7 @@ class Writer extends Component {
         if (useSolana) {
             function le(val) {
                 const res = new Uint8Array(4);
-                res[0] =  val & 0xFF;
+                res[0] = val & 0xFF;
                 res[1] = (val >> 8) & 0xFF;
                 res[2] = (val >> 16) & 0xFF;
                 res[3] = (val >> 24) & 0xFF;
@@ -276,14 +618,14 @@ class Writer extends Component {
                 //bheight = await connection.getBlockHeight();
             }
         } else {
-            const contract = await new window.web3.eth.Contract(Inheritance_abi, CONTRACT_ADDRESS, {from: account});
-            const feeToken = await new window.web3.eth.Contract(FiatTokenV1_abi, TOKEN_ADDRESS, {from: account});
+            const contract = await new window.web3.eth.Contract(Inheritance_abi, CONTRACT_ADDRESS, { from: account });
+            const feeToken = await new window.web3.eth.Contract(FiatTokenV1_abi, TOKEN_ADDRESS, { from: account });
 
             const res = await contract.methods.setOracles([
                 oracle_1,
                 oracle_2,
                 oracle_3
-            ]).send({chainId: CHAIN_ID, gasPrice: gasPrice});
+            ]).send({ chainId: CHAIN_ID, gasPrice: gasPrice });
             console.log(res)
             console.log(await contract.methods.Oracles(0).call())
 
@@ -374,6 +716,8 @@ class Writer extends Component {
         return resMerkle;
     }
 
+
+
     render() {
         const {
             rootHash,
@@ -385,262 +729,11 @@ class Writer extends Component {
         } = this.state;
 
         return (
-            <div className="text-gray-300 bg-black min-h-screen pb-32">
-                <header className="items-center justify-between pt-12">
-                    <h1 className="mx-auto text-center pb-2 text-5xl font-extrabold text-gray-300">
-                        Write Will
-                    </h1>
-                </header>
-
-                <div class="text-sm items-center text-center mt-6">
-                    <div class="max-w-2xl p-6 mx-auto text-center backdrop-sepia-0 backdrop-blur-sm">
-                        <div className="flex justify-between">
-                            <p className="text-zinc-500 font-bold text-left">Connected Address: </p>
-                            <span className="text-zinc-300">{this.state.currentWallet}</span>
-                        </div>
-                        <div className='flex justify-between'>
-                            <span className="text-zinc-500 font-bold text-left">Weavechain public key: </span>
-                            <span className="text-zinc-300">{this.state.publicKey}</span>
-                        </div>
-
-                        {/* <label className="text-yellow-600">Oracle #1</label>
-                        &nbsp;
-                        <input className='text-black border shadow-xl border-blue-500/10 text-center' style={{ width: "600px" }}
-                            type="text"
-                            placeholder=""
-                            value={oracle_1}
-                            onChange={(event) => this.setState({ oracle_1: event.target.value })}
-                        />
-                        <br />
-                        <label className="text-yellow-600">Oracle #2</label>
-                        &nbsp;
-                        <input className='text-black border shadow-xl border-blue-500/10 text-center' style={{ width: "600px" }}
-                            type="text"
-                            placeholder=""
-                            value={oracle_2}
-                            onChange={(event) => this.setState({ oracle_2: event.target.value })}
-                        />
-                        <br />
-                        <label className="text-yellow-600">Oracle #3</label>
-                        &nbsp;
-                        <input className='text-black border shadow-xl border-blue-500/10 text-center' style={{ width: "600px" }}
-                            type="text"
-                            placeholder=""
-                            value={oracle_3}
-                            onChange={(event) => this.setState({ oracle_3: event.target.value })}
-                        /> */}
-
-                        <div className='border border-white my-4'></div>
-                        <br />
-
-                        <h1 className="mx-auto text-center pb-2 text-3xl font-extrabold text-gray-300">
-                            Enscribe Will Items
-                        </h1>
-
-                        <Claim itemNo={1}
-                            field1={claim_1} field2={qty_1} field3={wallet_1}
-                            onChange1={(event) => this.setState({ claim_1: event.target.value })}
-                            onChange2={(event) => this.setState({ qty_1: event.target.value })}
-                            onChange3={(event) => this.setState({ wallet_1: event.target.value })}
-                        />
-
-                        <Claim itemNo={2}
-                            field1={claim_2} field2={qty_2} field3={wallet_2}
-                            onChange1={(event) => this.setState({ claim_2: event.target.value })}
-                            onChange2={(event) => this.setState({ qty_2: event.target.value })}
-                            onChange3={(event) => this.setState({ wallet_2: event.target.value })}
-                        />
-
-                        <Claim itemNo={3}
-                            field1={claim_3} field2={qty_3} field3={wallet_3}
-                            onChange1={(event) => this.setState({ claim_3: event.target.value })}
-                            onChange2={(event) => this.setState({ qty_3: event.target.value })}
-                            onChange3={(event) => this.setState({ wallet_3: event.target.value })}
-                        />
-
-                        <Claim itemNo={4}
-                            field1={claim_4} field2={qty_4} field3={wallet_4}
-                            onChange1={(event) => this.setState({ claim_4: event.target.value })}
-                            onChange2={(event) => this.setState({ qty_4: event.target.value })}
-                            onChange3={(event) => this.setState({ wallet_4: event.target.value })}
-                        />
-
-
-                        {/* <div className='border border-white'></div>
-                        <br />
-
-                        <h1 className="mx-auto text-center pb-2 text-3xl font-extrabold text-gray-300">
-                            Enscribe Witnesses
-                        </h1>
-
-                        <div className='rounded-md bg-black text-gray px-8 py-4 flex flex-col items-start m-3'>
-                            <p className='text-l pb-2 font-bold'>{`Please Input Witness Addresses`}</p>
-                            <p className='text-l py-2 '>First Address</p>
-                            <Form styling="w-full h-8" field={oracle_1} onChangeFunc={(event) => this.setState({ oracle_1: event.target.value })} placeholder={"Address Here"} />
-                            <p className='text-l py-2 '>Second Address</p>
-                            <Form styling="w-full h-8 pb-1" field={oracle_2} onChangeFunc={(event) => this.setState({ oracle_2: event.target.value })} placeholder={"Address Here"} />
-                            <p className='text-l py-2 '>Third Address</p>
-                            <Form styling="w-full h-8 " field={oracle_3} onChangeFunc={(event) => this.setState({ oracle_3: event.target.value })} placeholder={"Address Here"} />
-                        </div> */}
-
-
-                        {/* 
-                        <label className="text-yellow-600">Claim #1</label>
-                        &nbsp;
-                        <input className='text-black border shadow-xl border-blue-500/10 text-center' style={{ width: "600px" }}
-                            type="text"
-                            placeholder=""
-                            value={claim_1}
-                            onChange={(event) => this.setState({ claim_1: event.target.value })}
-                        />
-                        <br />
-                        <label>USDC Amount</label>
-                        &nbsp;
-                        <input className='border shadow-xl border-blue-500/10 text-center text-black' style={{ width: "100px" }}
-                            type="text"
-                            placeholder="0"
-                            value={qty_1}
-                            onChange={(event) => this.setState({ qty_1: event.target.value })}
-                        />
-                        <br />
-                        <label>Wallet</label>
-                        &nbsp;
-                        <input className='text-black border shadow-xl border-blue-500/10 text-center' style={{ width: "400px" }}
-                            type="text"
-                            placeholder=""
-                            value={wallet_1}
-                            onChange={(event) => this.setState({ wallet_1: event.target.value })}
-                        />
-                        <br />
-                        <br />
-
-                        <label className="text-yellow-600">Claim #2</label>
-                        &nbsp;
-                        <input className='border shadow-xl border-blue-500/10 text-center text-black' style={{ width: "600px" }}
-                            type="text"
-                            placeholder=""
-                            value={claim_2}
-                            onChange={(event) => this.setState({ claim_2: event.target.value })}
-                        />
-                        <br />
-                        <label>USDC Amount</label>
-                        &nbsp;
-                        <input className='border shadow-xl border-blue-500/10 text-center text-black' style={{ width: "100px" }}
-                            type="text"
-                            placeholder="0"
-                            value={qty_2}
-                            onChange={(event) => this.setState({ qty_2: event.target.value })}
-                        />
-                        <br />
-                        <label>Wallet</label>
-                        &nbsp;
-                        <input className='text-black border shadow-xl border-blue-500/10 text-center' style={{ width: "400px" }}
-                            type="text"
-                            placeholder=""
-                            value={wallet_2}
-                            onChange={(event) => this.setState({ wallet_2: event.target.value })}
-                        />
-                        <br />
-                        <br />
-
-                        <label className="text-yellow-600">Claim #3</label>
-                        &nbsp;
-                        <input className='border shadow-xl border-blue-500/10 text-center text-black' style={{ width: "600px" }}
-                            type="text"
-                            placeholder=""
-                            value={claim_3}
-                            onChange={(event) => this.setState({ claim_3: event.target.value })}
-                        />
-                        <br />
-                        <label>USDC Amount</label>
-                        &nbsp;
-                        <input className='border shadow-xl border-blue-500/10 text-center text-black' style={{ width: "100px" }}
-                            type="text"
-                            placeholder="0"
-                            value={qty_3}
-                            onChange={(event) => this.setState({ qty_3: event.target.value })}
-                        />
-                        <br />
-                        <label>Wallet</label>
-                        &nbsp;
-                        <input className='text-black border shadow-xl border-blue-500/10 text-center' style={{ width: "400px" }}
-                            type="text"
-                            placeholder=""
-                            value={wallet_3}
-                            onChange={(event) => this.setState({ wallet_3: event.target.value })}
-                        />
-                        <br />
-                        <br />
-
-                        <label className="text-yellow-600">Claim #4</label>
-                        &nbsp;
-                        <input className='border shadow-xl border-blue-500/10 text-center text-black' style={{ width: "600px" }}
-                            type="text"
-                            placeholder=""
-                            value={claim_4}
-                            onChange={(event) => this.setState({ claim_4: event.target.value })}
-                        />
-                        <br />
-                        <label>USDC Amount</label>
-                        &nbsp;
-                        <input className='border shadow-xl border-blue-500/10 text-center text-black' style={{ width: "100px" }}
-                            type="text"
-                            placeholder="0"
-                            value={qty_4}
-                            onChange={(event) => this.setState({ qty_4: event.target.value })}
-                        />
-                        <br />
-                        <label>Wallet</label>
-                        &nbsp;
-                        <input className='text-black border shadow-xl border-blue-500/10 text-center' style={{ width: "400px" }}
-                            type="text"
-                            placeholder=""
-                            value={wallet_4}
-                            onChange={(event) => this.setState({ wallet_4: event.target.value })}
-                        />
-                        <br />
-                        <br /> */}
-
-
-                        <div className='border border-white'></div>
-                        <br />
-
-                        <h1 className="mx-auto text-center pb-2 text-3xl font-extrabold text-gray-300">
-                            Enscribe Witnesses
-                        </h1>
-
-                        <div className='rounded-md bg-black text-gray px-8 py-4 flex flex-col items-start m-3'>
-                            <p className='text-l pb-2 font-bold'>{`Please Input Witness Addresses`}</p>
-                            <p className='text-l py-2 '>First Address</p>
-                            <Form styling="w-full h-8" field={oracle_1} onChangeFunc={(event) => this.setState({ oracle_1: event.target.value })} placeholder={"Address Here"} />
-                            <p className='text-l py-2 '>Second Address</p>
-                            <Form styling="w-full h-8 pb-1" field={oracle_2} onChangeFunc={(event) => this.setState({ oracle_2: event.target.value })} placeholder={"Address Here"} />
-                            <p className='text-l py-2 '>Third Address</p>
-                            <Form styling="w-full h-8 " field={oracle_3} onChangeFunc={(event) => this.setState({ oracle_3: event.target.value })} placeholder={"Address Here"} />
-                        </div>
-
-                        <button
-                            className="px-5 py-2.5 mx-2 mt-8 text-lg font-medium text-slate-900 bg-white hover:bg-zinc-200 rounded-md shadow"
-                            type="submit" onClick={() => this.connect()}>
-                            Connect Wallet
-                        </button>
-                        <button
-                            className="px-5 py-2.5 mx-2 mt-2 text-lg font-medium text-slate-900 bg-white hover:bg-zinc-200 rounded-md shadow"
-                            type="submit" onClick={() => this.write()}>
-                            Write
-                        </button>
-
-                        {!!rootHash ? <>
-                            <br />
-                            <br />
-                            <span className='text-xl text-white font-extrabold'>WILL ENSCRIBED</span>
-                            <br />
-                            {rootHash}
-                        </> : null}
-                    </div>
-                </div>
-                <br />
+            <div >
+                <this.ChooseView />
             </div>
+
+
         );
     }
 }
