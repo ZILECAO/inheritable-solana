@@ -20,57 +20,53 @@ export function NavBar() {
             </Link>
           </div>
 
+
           <div className="hidden md:block">
             <nav aria-label="Site Nav">
               <ul className="flex items-center gap-6 text-sm text-white text-4xl font-serif">
 
-                <div className="hidden md:block">
-                  <nav aria-label="Site Nav">
-                    <ul className="flex items-center gap-6 text-sm text-white text-4xl font-serif">
+                <li>
+                  <Link
+                    className="transition hover:text-gray-500/75 italic"
+                    href="/writer_page"
+                  >
+                    Estate Write
+                  </Link>
+                </li>
 
-                      <li>
-                        <Link
-                          className="transition hover:text-gray-500/75 italic"
-                          href="/writer_page"
-                        >
-                          Estate Write
-                        </Link>
-                      </li>
+                <li>
+                  <Link
+                    className="transition hover:text-gray-500/75"
+                    href="/oracle_page"
+                  >
+                    Oracle Vote
+                  </Link>
+                </li>
 
-                      <li>
-                        <Link
-                          className="transition hover:text-gray-500/75"
-                          href="/oracle_page"
-                        >
-                          Oracle Vote
-                        </Link>
-                      </li>
+                <li>
+                  <Link
+                    className="transition hover:text-gray-500/75"
+                    href="/reader_page"
+                  >
+                    Check Claim
+                  </Link>
+                </li>
 
-                      <li>
-                        <Link
-                          className="transition hover:text-gray-500/75"
-                          href="/reader_page"
-                        >
-                          Check Claim
-                        </Link>
-                      </li>
-
-                      <li>
-                        <Link
-                          className="transition hover:text-gray-500/75"
-                          href="/verify_page"
-                        >
-                          Verify Claims
-                        </Link>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-
-              </div>
+                <li>
+                  <Link
+                    className="transition hover:text-gray-500/75"
+                    href="/verify_page"
+                  >
+                    Verify Claims
+                  </Link>
+                </li>
+              </ul>
+            </nav>
           </div>
-        </header>
+        </div>
+      </div>
+    </header>
 
 
-        )
+  )
 }
