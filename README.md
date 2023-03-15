@@ -10,16 +10,26 @@ Live Website: https://inheritable-nextjs.vercel.app/writer_page
 
 
 
-### Q&A
+### 1. Why did you build your project?
 
-1. Why did you build your project?
-```
 Although Web3 assets are relatively new, it’s always important to plan for the future, and when looking at options for passing down Web3 assets, we found no compelling solutions. As a result, we built Inheritable to provide a publicly verifiable and quantum resistant solution to Web3 asset inheritance.
-```
 
 
 
+### 2. How was it built?
 
+
+### 3. Testing instructions for Judges
+
+
+### 4. Project Demo/Walkthrough
+
+Youtube: https://youtu.be/AS2wmoxLfF4
+
+
+### 5. Team Members: 
+
+Zile Cao, Eric Chen, Paul Loh, Brandon Kong, Intel Chen, Winnie Wang, Aashika Vishwanath, and Nathaniel Luu (all students at the University of Pennsylvania)
 
 
 Inheritable is a Web3 Will solution for secure, decentralized inheritance that’s Anchored on Solana and powered by Weavechain.
