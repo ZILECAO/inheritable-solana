@@ -29,7 +29,7 @@ Our infrastructure method of anchoring Merkle Tree root hashes to Solana provide
 
 Frontend Stack: We use react, next.js, and tailwind css to build our interactive UI. We also use Web3.js to connect our Phantom wallet to the app from the browser. 
 
-Backend Stack: Inheritable is built on top of Solana and utilizes the Weavechain API. Our frontend code makes a call to a public Weavechain API Node that is configured with two specific Solana Accounts (one for writing hashes of the wills and one for oracle voting & unlocking of wills). See more documentation about the Weavechain API here: https://docs.weavechain.com/api.html. 
+Backend Stack: Inheritable is built on top of Solana and utilizes the Weavechain API. Our frontend code makes a call to a public Weavechain API Node that is configured with two specific Solana Program Accounts (one for writing hashes of the wills and one for oracle voting & unlocking of wills). See more documentation about the Weavechain API here: https://docs.weavechain.com/api.html. 
 
 Design: We used various tools like Figma and Canva to initially design our UI and logos. We then implemented these desgins in our final dapp.
 
