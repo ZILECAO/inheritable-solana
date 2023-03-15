@@ -82,6 +82,17 @@ Youtube: https://youtu.be/AS2wmoxLfF4
 
 ### 5. Future Outlook: 
 
+* We know many will ask us the question of who exactly will want to a Web3 Inheritance product. The answer: actually many people do. Heirified and HASHED are two Web3 companies dedicated to this vision with elderly customers who are ready to adopt this technology. Our future vision is to work with companies like these to onboard more elderly users to the Solana ecosystem as they decide who they want to pass down their digital assets to :)
+
+* One of our main project goals was to also implement a funds deposit for the Estate and then an automatic funds release to their benefactor wallet addresses once the Esate has died. The funds will be stored in a Solana Escrow Program Account. Unfortunately due to time constraints, we weren't able to ship this securely in our final product.
+
+* Percentage-based claims as opposed to numerical-based claims
+
+* Notification engine (possibly via XMTP)
+
+* A more aesthetic and comprehensive UI with consistent styling 
+
+
 ---
 
 ### 6. Team Members: 
