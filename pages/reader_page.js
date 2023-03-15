@@ -19,7 +19,7 @@ class Dashboard extends Component {
         super(props);
 
         this.state = {
-            screen: 0
+            screen: 0,
         };
     }
 
@@ -70,46 +70,6 @@ class Dashboard extends Component {
                     <div className='max-h-2/5'>
 
                         <this.SidebarReader />
-
-                    </div>
-
-
-
-                    <div className='flex flex-col justify-end items-center'>
-
-                        <div className='flex flex-col items-center text-zinc-300 border-2 rounded p-4 m-2'>
-                            <div className='justify-center flex-nowrap flex items-center'>
-                                <a className='font-sm pb-2 text-md'>Smart Contracts deployed on</a>
-                                <Image className='mx-2'
-                                    src="solana.svg"
-                                    alt="image"
-                                    width={40}
-                                    height={40}
-                                />
-                            </div>
-                            <a target="_blank" href={"https://explorer.solana.com/address/3uCfjcPxnvWyNRSpBQKcDwpBmuAaXraPw8v7SzKicfmq?cluster=testnet"} className="text-xs font-light underline hover:text-indigo-300 hover:ease-in-out hover:transition hover:duration-700">Writing Hashes of the Will</a>
-                            <a target="_blank" href={"https://explorer.solana.com/address/G9nmhaToGZr2ih7X24Zo72w6fYLAEYU9EMjSo5M5D3vf?cluster=testnet"} className="text-xs font-light underline hover:text-indigo-300 hover:ease-in-out hover:transition hover:duration-700">Oracle Signing</a>
-                        </div>
-                        <div className='flex flex-nowrap items-center place m-1'>
-                            <span className='text-white font-light text-m'>Anchored on</span>
-                            <Image className='mx-2'
-                                src="solana.svg"
-                                alt="image"
-                                width={40}
-                                height={40}
-                            />
-                        </div>
-
-                        <div className='flex flex-nowrap items-center pb-6'>
-
-                            <span className='text-white font-light text-m'>Powered by</span>
-                            <Image className='mx-2 my-2'
-                                src="logo2.svg"
-                                alt="image"
-                                width={150}
-                                height={150}
-                            />
-                        </div>
 
                     </div>
                 </div>
