@@ -7,7 +7,6 @@ import WeaveHash_abi from './WeaveHash_abi.json';
 import Inheritance_abi from './Inheritance_abi.json';
 import mermaid from 'mermaid';
 
-import { coinbaseWallet } from './Writer';
 
 const Buffer = require('buffer').Buffer;
 

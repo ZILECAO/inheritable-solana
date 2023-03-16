@@ -1,6 +1,6 @@
 import React, { Component, useEffect } from 'react';
 import Web3 from 'web3'
-
+import { base58_to_binary, binary_to_base58 } from "base58-js";
 import Inheritance_abi from "./Inheritance_abi.json";
 
 const Buffer = require("buffer").Buffer

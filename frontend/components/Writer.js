@@ -4,7 +4,7 @@ import WeaveHelper from "./weaveapi/helper";
 import Claim from './claim';
 import Form from './form';
 import Image from 'next/image';
-
+import { base58_to_binary, binary_to_base58 } from "base58-js";
 import Inheritance_abi from "./Inheritance_abi.json";
 import FiatTokenV1_abi from "./FiatTokenV1_abi.json";
 
