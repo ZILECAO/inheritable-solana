@@ -6,7 +6,7 @@ Slide Deck: https://docs.google.com/presentation/d/1y7aFhTgXRT0kUugmepj17SMQB-st
 
 Twitter: https://twitter.com/Inheritable_xyz
 
-Live Website: https://inheritable-nextjs.vercel.app
+Live Website: https://inheritable.vercel.app/
 
 ![Inheritable UI](https://gateway.pinata.cloud/ipfs/QmVdp1PWSGuReLyXZQDPoLX46yps4QBQdFfCJRqApfsemy?_gl=1*a7z32h*_ga*Y2YyOTEzZDYtZDk3YS00MjQ1LTlmNTgtNDFjMDE0YjQxY2U4*_ga_5RMPXG14TE*MTY3ODg2ODM2NC43LjAuMTY3ODg2ODM2NS41OS4wLjA.)
 
