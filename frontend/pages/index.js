@@ -13,8 +13,8 @@ export default function Home() {
             <Image className="pl-24"
               src="judge.svg"
               alt="image"
-              width={500}
-              height={500}
+              width={650}
+              height={650}
             />
           </div>
 
@@ -23,12 +23,12 @@ export default function Home() {
             <Image className="pb-6"
               src="/newlogo.svg"
               alt="logo"
-              width={400}
-              height={400}
+              width={500}
+              height={500}
             />
 
             <div className="ml-4">
-              <h2 className="mt-2 mb-1 text-xl font-bold font-DMSans text-gray-300 sm:text-4xl">Web3 Wills for Secure, Decentralized Inheritance</h2>
+              <h2 className="mt-2 mb-1 text-xl font-bold font-DMSerif text-gray-300 sm:text-4xl">Creating Web3 Wills for Secure, Decentralized Inheritance</h2>
 
               <span className='flex flex-nowrap items-center place pt-4 pb-4 font-DMSerif'>
                 <span className='text-gray-500 text-xl font-small sm:text-2xl pr-1'>Anchored on</span>
@@ -57,9 +57,9 @@ export default function Home() {
 
               <a
                 href="/writer_page"
-                className="mt-2 inline-flex items-center rounded border border-zinc-900 bg-bb px-8 py-3 text-white hover:bg-zinc-700 focus:outline-none focus:ring hover:ease-in-out hover:transition hover:duration-700"
+                className="mt-2 inline-flex items-center rounded-lg border border-zinc-900 bg-bb px-10 py-4 text-lg text-white hover:bg-zinc-700 focus:outline-none focus:ring hover:ease-in-out hover:transition hover:duration-700"
               >
-                <span className="text-sm font-bold font-DMSans"> Write Your First Will </span>
+                <span className="text-md font-bold font-DMSerif"> Write Your First Will </span>
 
                 <svg
                   className="ml-3 h-5 w-5"
@@ -91,8 +91,8 @@ export default function Home() {
                                   <Image className='mx-2'
                                       src="solana.svg"
                                       alt="image"
-                                      width={40}
-                                      height={40}
+                                      width={25}
+                                      height={25}
                                   />
                               </div>
                               <a target="_blank" href={"https://explorer.solana.com/address/3uCfjcPxnvWyNRSpBQKcDwpBmuAaXraPw8v7SzKicfmq?cluster=testnet"} className="text-xs font-light underline hover:text-indigo-300 hover:ease-in-out hover:transition hover:duration-700">Writing Hashes of the Will</a>
