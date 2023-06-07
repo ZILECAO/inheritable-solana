@@ -5,10 +5,10 @@ import Image from 'next/image'
 export default function Home() {
   return (
     <section className="bg-zinc-900 min-h-screen">
-      <div className="mx-auto max-w-screen-xl px-4 pt-24 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+      <div className="flex flex-col justify-center items-center h-screen sm:mx-8 md:mx-12 lg:mx-16 xl:mx-20 pt-12">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16 pb-24">
           <div
-            className="relative h-64 overflow-hidden rounded-lg sm:h-80 lg:order-last lg:h-full"
+            className="relative overflow-hidden rounded-lg lg:order-last sm:order-last flex items-center justify-center h-full"
           >
             <Image className="pl-24"
               src="judge.svg"

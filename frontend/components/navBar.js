@@ -13,10 +13,10 @@ const NavBar = () => {
             <span className="sr-only">Home</span>
             <Link href="/">
               <Image
-                src="/newlogo.svg"
+                src="/pen.svg"
                 alt="logo"
-                width={150}
-                height={150}
+                width={40}
+                height={40}
               />
             </Link>
           </div>
@@ -25,6 +25,15 @@ const NavBar = () => {
           <div className="hidden md:block">
             <nav aria-label="Site Nav">
               <ul className="flex items-center gap-6 text-md text-white font-serif">
+
+              <li>
+                  <Link
+                    className="transition hover:text-gray-500/75 italic"
+                    href="/index"
+                  >
+                    Dashboard
+                  </Link>
+                </li>
 
                 <li>
                   <Link
@@ -55,7 +64,7 @@ const NavBar = () => {
 
                 <li>
                   <Link
-                    className="transition hover:text-gray-500/75 italic"
+                    className="transition hover:text-gray-500/75"
                     href="/verify_page"
                   >
                     Verify Claims
