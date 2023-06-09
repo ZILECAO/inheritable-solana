@@ -64,7 +64,7 @@ const NavBar = () => {
 
                 <li>
                   <Link
-                    className="transition hover:text-gray-500/75"
+                    className="transition hover:text-gray-500/75 italic"
                     href="/verify_page"
                   >
                     Verify Claims
