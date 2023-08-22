@@ -29,7 +29,7 @@ class Dashboard extends Component {
 
     render() {
         return (
-            <div className='font-serif bg-zinc-900 '>
+            <div className='font-serif  '>
                 <Reader />
             </div>
         );

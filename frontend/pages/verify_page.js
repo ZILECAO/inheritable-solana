@@ -66,7 +66,7 @@ class Dashboard extends Component {
 
     render() {
         return (
-            <div className="font-serif bg-zinc-900 ">
+            <div className="font-serif ">
                 {/* sidebar */}
                 {/* <div className="fixed w-1/4 h-4/6	 flex flex-col justify-between">
                     <div className='max-h-2/5'>
