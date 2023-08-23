@@ -12,7 +12,7 @@ const Claim = ({
 }) => {
     return (
         <div className='w-full'>
-            <div className='bg-black text-gray mx-3 py-4 flex flex-col items-start'>
+            <div className=' text-gray mx-3 py-4 flex flex-col items-start'>
                 <p className='text-sm pb-2'>{`Item ${itemNo} Description`}</p>
                 <Form
                     styling='w-full h-24'
