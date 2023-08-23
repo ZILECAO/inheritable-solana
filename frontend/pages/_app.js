@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }) {
         <link rel="shortcut icon" href="/Group.svg" />
       </Head>
 
-      <NavBar connected={connected} setConnected={setConnected} />
+      {/* <NavBar connected={connected} setConnected={setConnected} /> */}
       <BackgroundProvider>
         <Component
           {...pageProps}
