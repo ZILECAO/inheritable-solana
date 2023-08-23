@@ -37,7 +37,7 @@ class Dashboard extends Component {
 
   Witnesses = () => {
     return (
-      <div className="bg-zinc-900 ">
+      <div className=" ">
         {/* sidebar */}
         <div className="fixed w-1/4 h-4/6	 flex flex-col justify-between">
           <div className='max-h-2/5'>
@@ -90,9 +90,9 @@ class Dashboard extends Component {
 
         {/* main page section */}
         <div className="font-inter flex ">
-          <div className='w-1/4 bg-zinc-900 flex flex-col'>
+          <div className='w-1/4 flex flex-col'>
           </div>
-          <div className='w-3/4 bg-black'>
+          <div className='w-3/4 '>
             <Writer />
 
           </div>
@@ -103,7 +103,7 @@ class Dashboard extends Component {
 
   WillComps = () => {
     return (
-      <div className="bg-zinc-900 ">
+      <div className=" ">
         {/* sidebar */}
         <div className="fixed w-1/4 h-4/6	 flex flex-col justify-between">
           <div className='max-h-2/5'>
@@ -156,9 +156,9 @@ class Dashboard extends Component {
 
         {/* main page section */}
         <div className="font-inter flex ">
-          <div className='w-1/4 bg-zinc-900 flex flex-col'>
+          <div className='w-1/4 flex flex-col'>
           </div>
-          <div className='w-3/4 bg-black'>
+          <div className='w-3/4 '>
             <Writer />
 
           </div>
@@ -169,7 +169,7 @@ class Dashboard extends Component {
 
   SignComp = () => {
     return (
-      <div className="bg-zinc-900 ">
+      <div className="">
         {/* sidebar */}
         <div className="fixed w-1/4 h-4/6	 flex flex-col justify-between">
           <div className='max-h-2/5'>
@@ -222,9 +222,9 @@ class Dashboard extends Component {
 
         {/* main page section */}
         <div className="font-inter flex ">
-          <div className='w-1/4 bg-zinc-900 flex flex-col'>
+          <div className='w-1/4 flex flex-col'>
           </div>
-          <div className='w-3/4 bg-black'>
+          <div className='w-3/4 '>
             <Writer />
           </div>
         </div>
@@ -236,7 +236,7 @@ class Dashboard extends Component {
     return (
 
 
-      < div className='text-white h-2/5 mt-10 text-md pl-8 flex flex-col justify-around' >
+      <div className='text-white h-2/5 mt-10 text-md pl-8 flex flex-col justify-around' >
         <div className='my-2 mt-12'>
           <div className='flex items-center justify-left'>
             <Image

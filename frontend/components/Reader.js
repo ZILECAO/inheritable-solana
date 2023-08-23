@@ -6,7 +6,7 @@ import { binary_to_base58, base58_to_binary } from 'base58-js';
 import WeaveHash_abi from './WeaveHash_abi.json';
 import Inheritance_abi from './Inheritance_abi.json';
 import mermaid from 'mermaid';
-
+import Claim from './claim';
 
 const Buffer = require('buffer').Buffer;
 
@@ -55,9 +55,7 @@ const CHAIN = {
 
 const CHAIN_URL = 'https://goerli.base.org';
 
-const ethereum = useSolana
-    ? null
-    : null;
+const ethereum = useSolana ? null : null;
 
 class Reader extends Component {
     constructor(props) {
@@ -95,6 +93,27 @@ class Reader extends Component {
             error: null,
             receivedClaim: null,
             receivedQty: null,
+            showClaim: false,
+            // hard coded claims
+            oracle_1: '9yupErbB4jFX3q2rgJidkTgAUeriYhLbF1FUDfZifeEn',
+            oracle_2: '6arzYsxkjTuCmvNH9dE8wjeAnv61rei6uGBzFnRVyaDh',
+            oracle_3: '7oATF4u22gFYsYKfgFV7AJZRztkNCtxx71ZCGTjZg9Le',
+            claim_1:
+                'John Doe, son, with last 4 SSN digits 1234, 1 House in Palm Beach',
+            qty_1: 100,
+            wallet_1: '9yupErbB4jFX3q2rgJidkTgAUeriYhLbF1FUDfZifeEn',
+            claim_2:
+                'Jane Doe, daughter, with last 4 SSN digits 5678, Fiat USD',
+            qty_2: 200,
+            wallet_2: '6arzYsxkjTuCmvNH9dE8wjeAnv61rei6uGBzFnRVyaDh',
+            claim_3:
+                'George Doe, nephew, with last 4 SSN digits 4567, Fiat USD',
+            qty_3: 300,
+            wallet_3: '9yupErbB4jFX3q2rgJidkTgAUeriYhLbF1FUDfZifeEn',
+            claim_4: 'Mary Doe, niece, with last 4 SSN digits 7654, Fiat USD',
+            qty_4: 400,
+            wallet_4: '9yupErbB4jFX3q2rgJidkTgAUeriYhLbF1FUDfZifeEn',
+            screen: 1,
         };
 
         this.mermaidRef = React.createRef();
@@ -203,6 +222,8 @@ class Reader extends Component {
         //1. login. The login could be done only once if the nodeApi and session variables are kept in the component state
         const { nodeApi, session } = await this.login();
         console.log(this.state.credentials);
+
+        this.setState({ showClaim: true });
 
         const filter = null;
         const res = await nodeApi.read(
@@ -507,6 +528,10 @@ class Reader extends Component {
             error,
             receivedClaim,
             receivedQty,
+            showClaim,
+            claim_1,
+            qty_1,
+            wallet_1,
         } = this.state;
 
         if (flowChart && flowChart.length > 0) {
@@ -517,9 +542,9 @@ class Reader extends Component {
         }
 
         return (
-            <section className='text-gray-300 bg-zinc-900 min-h-screen pb-32'>
+            <section className='text-yellow-100  min-h-screen pb-32'>
                 <header className='items-center justify-between pt-12'>
-                    <h1 className='mx-auto pl-24 pb-2 text-xl font-extrabold text-gray-300'>
+                    <h1 className='mx-auto text-left pb-2 font-DMSerif font-extrabold text-yellow-100 text-5xl pl-24'>
                         Check for Claim
                     </h1>
                     <div className='border border-white my-4 mx-24'></div>
@@ -557,9 +582,50 @@ class Reader extends Component {
 
                         <div className='border border-white my-4'></div>
                         <br />
-                        <div className='mb-8'>
-                            Please Follow Steps Below to Inherit Assets
-                        </div>
+
+                        {showClaim && (
+                            // Give big text saying, "Retrieved Claim: "
+                            <div>
+                                <div>
+                                    <div className='my-2'>
+                                        <p className='text-2xl text-zinc-400 font-bold'>
+                                            Claim Retrieval Successful
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className='w-full max-w-screen-xl mx-auto'>
+                                    <div className='flex flex-wrap justify-between '>
+                                        <Claim
+                                            itemNo={1}
+                                            field1={claim_1}
+                                            field2={qty_1}
+                                            field3={wallet_1}
+                                            onChange1={(event) =>
+                                                this.setState({
+                                                    claim_1: event.target.value,
+                                                })
+                                            }
+                                            onChange2={(event) =>
+                                                this.setState({
+                                                    qty_1: event.target.value,
+                                                })
+                                            }
+                                            onChange3={(event) =>
+                                                this.setState({
+                                                    wallet_1:
+                                                        event.target.value,
+                                                })
+                                            }
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+                        {!showClaim && (
+                            <div className='mb-8'>
+                                Please Follow Steps Below to Inherit Assets
+                            </div>
+                        )}
 
                         <div class='flex flex-col justify-start align-start'>
                             {/* <div className='rounded-md bg-black text-gray px-8 pt-4 flex flex-col items-start m-3'>
@@ -595,15 +661,16 @@ class Reader extends Component {
                             />
                             <br />
                             <br /> */}
-                            {message ? (
-                                <div className='border-1 rounded-sm border-zinc-700 m-4'>
-                                    <div className='border border-white my-2'></div>
-                                    <span className='text-white text-center text-xs whitespace-pre-line'>
-                                        {message}
-                                    </span>
-                                </div>
-                            ) : null}
-                            {success ? (
+                            {/* COMMENTED HERE */}
+                            {/* {message ? (
+                <div className="border-1 rounded-sm border-zinc-700 m-4">
+                  <div className="border border-white my-2"></div>
+                  <span className="text-white text-center text-xs whitespace-pre-line">
+                    {message}
+                  </span>
+                </div>
+              ) : null} */}
+                            {/* {success ? (
                                 <>
                                     <span className='text-white text-center text-lg font-bold'>
                                         CLAIM VERIFIED
@@ -616,8 +683,8 @@ class Reader extends Component {
                                         {error}
                                     </span>
                                 </>
-                            ) : null}
-                            {claimHash && claimHash.length > 0 ? (
+                            ) : null} */}
+                            {/* {claimHash && claimHash.length > 0 ? (
                                 <div>
                                     <div className='border border-white my-2'></div>
                                     <label className='text-white font-lg'>
@@ -634,7 +701,7 @@ class Reader extends Component {
                                 className='mermaid'
                             >
                                 {flowChart}
-                            </div>
+                            </div> */}
                             {receivedClaim != null ? (
                                 <div>
                                     <div className='border border-white my-2'></div>
@@ -656,21 +723,24 @@ class Reader extends Component {
                                     </p>
                                 </div>
                             ) : null}
-                            <button
-                                className='text-left font-DMSans font-bold px-5 py-2.5 mx-2 mt-8 text-2xl text-slate-100 bg-zinc-700 hover:bg-zinc-600 rounded-md shadow'
-                                type='submit'
-                                onClick={() => this.connect()}
-                            >
-                                1. Click to Connect Wallet
-                            </button>
-                            &nbsp;
-                            <button
-                                className='text-left font-DMSans font-bold px-5 py-2.5 mx-2 text-2xl text-slate-100 bg-zinc-700 hover:bg-zinc-600 rounded-md shadow'
-                                type='submit'
-                                onClick={() => this.readClaim()}
-                            >
-                                2. Click to Retrieve Your Claim
-                            </button>
+                            {showClaim != true && (
+                                <div>
+                                    <button
+                                        className='text-left font-DMSans font-bold px-5 py-2.5 mx-2 mt-8 text-2xl text-slate-100 bg-zinc-700 hover:bg-zinc-600 rounded-md shadow'
+                                        type='submit'
+                                        onClick={() => this.connect()}
+                                    >
+                                        1. Click to Connect Wallet
+                                    </button>
+                                    <button
+                                        className='text-left font-DMSans font-bold px-5 py-2.5 mx-2 text-2xl text-slate-100 bg-zinc-700 hover:bg-zinc-600 rounded-md shadow'
+                                        type='submit'
+                                        onClick={() => this.readClaim()}
+                                    >
+                                        2. Click to Retrieve Your Claim
+                                    </button>
+                                </div>
+                            )}
                             &nbsp;
                             {/* <button
                                 className="px-5 py-2.5 mx-2 mt-8 text-lg font-medium text-slate-900 bg-white hover:bg-zinc-200 rounded-md shadow"
@@ -690,6 +760,20 @@ class Reader extends Component {
                             ) : null}
                         </div>
                     </div>
+                </div>
+                <div className='flex justify-end'>
+                    <a
+                        className='px-5 mx-2 mt-4 text-lg font-medium text-slate-900 bg-white hover:bg-zinc-200 rounded-md shadow'
+                        href='/oracle_page'
+                    >
+                        Back
+                    </a>
+                    <a
+                        className='px-5 mx-2 mt-4 mr-48 text-lg font-medium text-slate-900 bg-white hover:bg-zinc-200 rounded-md shadow'
+                        href='/verify_page'
+                    >
+                        Next
+                    </a>
                 </div>
             </section>
         );
