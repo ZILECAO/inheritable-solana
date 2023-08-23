@@ -1,11 +1,11 @@
 import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { DynamicContextProvider, DynamicWidget } from "@dynamic-labs/sdk-react";
 
 export default function Home() {
   return (
-    <section className="text-center mx-auto max-w-screen min-h-screen mt-[8vh]">
+    <section className="text-center mx-auto max-w-screen min-h-screen mt-[10vh]">
       <div className="flex flex-col justify-center items-center h-screen sm:mx-8 md:mx-12 lg:mx-16 xl:mx-20">
         {/* <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16 pb-24"> */}
         {/* <div className="relative overflow-hidden rounded-lg lg:order-last sm:order-last flex items-center justify-center h-full">
@@ -18,37 +18,16 @@ export default function Home() {
             />
           </div> */}
 
-        <motion.div className="justify-center">
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 0,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-              transition: { duration: 1.25, delay: 0.3 },
-            }}
-          >
-            <Image
-              className="pb-4 justify-center"
-              src="/newlogo.svg"
-              alt="logo"
-              width={500}
-              height={500}
-            />
-          </motion.div>
+        <div className="justify-center">
+          <Image
+            className="pb-4 justify-center"
+            src="/newlogo.svg"
+            alt="logo"
+            width={500}
+            height={500}
+          />
 
-          <motion.div className="ml-4"
-          initial={{
-          opacity: 0,
-          y: 15,
-        }}
-        animate={{
-          opacity: 1,
-          y: 0,
-          transition: { duration: 1, delay: 1.5 },
-        }}>
+          <div className="ml-4">
             <h2 className=" mb-1 text-xl font-bold font-DMSerif text-yellow-100 sm:text-4xl">
               Creating Web3 Wills for Secure, Decentralized Inheritance
             </h2>
@@ -87,7 +66,7 @@ export default function Home() {
             <span className="flex flex-nowrap items-center place font-DMSerif">
               <a
                 href="/writer_page"
-                className="animate-pulse mt-2 inline-flex items-center rounded-lg border border-zinc-900 bg-zinc-900 px-10 py-4 text-lg text-white hover:bg-zinc-800 focus:outline-none focus:ring ease-in-out transition duration-700"
+                className="mt-2 inline-flex items-center rounded-lg border border-zinc-900 bg-zinc-900 px-10 py-4 text-lg text-white hover:bg-zinc-800 focus:outline-none focus:ring ease-in-out transition duration-700"
               >
                 <span className="text-md font-bold font-DMSerif">
                   {" "}
@@ -110,19 +89,9 @@ export default function Home() {
                 </svg>
               </a>
             </span>
-          </motion.div>
-          <motion.div
-          initial={{
-          opacity: 0,
-          y: 15,
-        }}
-        animate={{
-          opacity: 1,
-          y: 0,
-          transition: { duration: 1, delay: 2.75 },
-        }}>
+
             <span className="flex flex-nowrap items-center justify-center place font-DMSerif">
-              <div className=" text-zinc-300 font-DMSans rounded mt-[36vh]">
+              <div className=" text-zinc-300 font-DMSans rounded mt-48">
                 <div className="justify-start flex-nowrap flex items-center pb-1">
                   <div className="items-center font-sm text-md">
                     Smart Contracts deployed on
@@ -160,10 +129,10 @@ export default function Home() {
                 </div>
               </div>
             </span>
-          </motion.div>
+          </div>
 
           {/* </div> */}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
