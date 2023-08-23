@@ -7,9 +7,9 @@ import { DynamicContextProvider, DynamicWidget } from "@dynamic-labs/sdk-react";
 const NavBar = () => {
   // Top Navigation Bar Element
   return (
-    <header aria-label="Site Header" className="bg-zinc-900 sticky top-0 z-50">
+    <header aria-label="Site Header" className="bg-black sticky top-0 z-50">
       <div className="mx-auto sm:px-12 lg:px-24">
-        <div className="flex h-[6vh] items-center justify-between">
+        <div className="flex h-[8vh] items-center justify-between">
           <div className="md:flex md:items-center md:gap-12">
             <span className="sr-only">Home</span>
             <Link href="/">
