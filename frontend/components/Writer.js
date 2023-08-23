@@ -371,7 +371,7 @@ class Writer extends Component {
         <div className="font-inter flex">
           <div className="w-1/4 flex flex-col"></div>
           <div className="w-3/4 ">
-            <div className="p-8 mx-auto backdrop-sepia-0 text-yellow-100 min-h-screen">
+            <div className="p-8 pr-32 mx-auto backdrop-sepia-0 text-yellow-100 min-h-screen">
               <h1 className="mx-auto text-left pb-2 font-DMSerif font-extrabold text-yellow-100 text-5xl">
                 Enscribe Will Components
               </h1>
@@ -379,7 +379,7 @@ class Writer extends Component {
               <div className="border border-white mt-2"></div>
               <br />
 
-              <div className="flex flex-wrap justify-between ">
+              <div className="flex flex-wrap justify-between font-DMSerif font-semibold">
                 <Claim
                   itemNo={1}
                   field1={claim_1}
@@ -463,8 +463,8 @@ class Writer extends Component {
 
   SidebarWriter = () => {
     return (
-      <div className="text-DMSerif text-white h-2/5 mt-10 text-md pl-8 flex flex-col justify-around">
-        <div className="mb-6 mt-24">
+      <div className="text-DMSerif text-white h-2/5 mt-10 text-md pl-8 flex flex-col justify-center">
+        <div className="mb-6 mt-24 ml-36">
           <div className="flex items-center justify-left">
             {this.state.screen == 1 ? (
               <Image src="selected.svg" alt="image" width={25} height={25} />
@@ -488,7 +488,7 @@ class Writer extends Component {
           </div>
         </div>
 
-        <div className="my-6">
+        <div className="my-6 ml-36">
           <div className="flex items-center justify-left">
             {this.state.screen == 2 ? (
               <Image src="selected.svg" alt="image" width={25} height={25} />
@@ -512,7 +512,7 @@ class Writer extends Component {
           </div>
         </div>
 
-        <div className="my-6">
+        <div className="my-6 ml-36">
           <div className="font-DMSerif flex items-center justify-left">
             {this.state.screen == 3 ? (
               <Image src="selected.svg" alt="image" width={25} height={25} />
