@@ -604,7 +604,7 @@ class Reader extends Component {
                   <span className="text-white">{claimHash}</span>
                 </div>
               ) : null}
-              <div id="mermaid0" ref={this.mermaidRef} className="mermaid">
+              <div id="mermaid" ref={this.mermaidRef} className="mermaid">
                 {flowChart}
               </div>
               {receivedClaim != null ? (

@@ -379,7 +379,7 @@ class Writer extends Component {
               <div className="border border-white mt-2"></div>
               <br />
 
-              <div className="flex flex-wrap justify-between ">
+              <div className="flex flex-wrap justify-between font-DMSerif font-semibold">
                 <Claim
                   itemNo={1}
                   field1={claim_1}
