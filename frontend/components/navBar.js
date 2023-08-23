@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { DynamicContextProvider, DynamicWidget } from "@dynamic-labs/sdk-react";
@@ -6,11 +6,10 @@ import { DynamicContextProvider, DynamicWidget } from "@dynamic-labs/sdk-react";
 
 const NavBar = () => {
   // Top Navigation Bar Element
-  const [stage, setStage] = useState(0);
   return (
     <header aria-label="Site Header" className="bg-zinc-900 sticky top-0 z-50">
       <div className="mx-auto sm:px-12 lg:px-24">
-        <div className="flex h-[9vh] items-center justify-between">
+        <div className="flex h-[6vh] items-center justify-between">
           <div className="md:flex md:items-center md:gap-12">
             <span className="sr-only">Home</span>
             <Link href="/">
