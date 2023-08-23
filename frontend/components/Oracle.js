@@ -325,9 +325,9 @@ class Oracle extends Component {
 
         <div class="text-sm items-center mt-6 px-24 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
           <div class="col-span-1">
-            <div className="flex justify-between">
+            <div className="flex justify-start">
               <p className="text-zinc-500 font-bold text-xl text-left pb-6">
-                Connected Address:{" "}
+                Connected Address: {" "}
               </p>
               <span className="text-zinc-300 text-lg">
                 {this.state.currentWallet}

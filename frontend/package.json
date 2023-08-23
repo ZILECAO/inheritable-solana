@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "@coinbase/wallet-sdk": "^3.6.4",
+    "@dynamic-labs/sdk-react": "^0.17.32",
     "@solana/web3.js": "^1.73.2",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -15,6 +16,7 @@
     "buffer": "^6.0.3",
     "crypto-js": "^4.1.1",
     "elliptic": "^6.5.4",
+    "framer-motion": "^10.16.1",
     "java-random": "^0.4.0",
     "js-sha3": "^0.8.0",
     "jsrsasign": "^10.5.27",
